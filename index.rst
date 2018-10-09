@@ -3,6 +3,8 @@
    :numbered:
    
    intro.md
+
    boot.md
+
    ssh_changepassword.md
 
