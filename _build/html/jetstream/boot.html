@@ -1,0 +1,311 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Booting a Jetstream Computer Instance for your use! &#8212; 2018-setacna-rnaseq 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Adding password to a Jetstream instance" href="ssh_changepassword.html" />
+    <link rel="prev" title="Intro and Schedule" href="../intro.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ssh_changepassword.html" title="Adding password to a Jetstream instance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../intro.html" title="Intro and Schedule"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Booting a Jetstream Computer Instance for your use!</a><ul>
+<li><a class="reference internal" href="#request-to-log-in-to-the-jetstream-portal">Request to log in to the Jetstream Portal</a></li>
+<li><a class="reference internal" href="#use-xsede">Use “XSEDE”</a></li>
+<li><a class="reference internal" href="#fill-in-the-username-and-password-and-click-sign-in">Fill in the username and password and click “Sign in”</a></li>
+<li><a class="reference internal" href="#select-projects-and-create-new-project">Select Projects and “Create New Project”</a></li>
+<li><a class="reference internal" href="#name-the-project-for-yourself-click-create">Name the project for yourself, click “create”</a></li>
+<li><a class="reference internal" href="#boot-an-instance-with-a-pre-built-image">Boot an instance with a pre-built image</a></li>
+<li><a class="reference internal" href="#find-the-dibsi-2018-workshop-image-image-click-on-it">Find the “DIBSI 2018 workshop image” image, click on it</a></li>
+<li><a class="reference internal" href="#name-it-something-simple">Name it something simple</a></li>
+<li><a class="reference internal" href="#wait-for-it-to-become-active">Wait for it to become active</a></li>
+<li><a class="reference internal" href="#click-on-your-new-instance-to-get-more-information">Click on your new instance to get more information!</a></li>
+<li><a class="reference internal" href="#miscellany">Miscellany</a></li>
+<li><a class="reference internal" href="#suspend-your-instance">Suspend your instance</a><ul>
+<li><a class="reference internal" href="#resuming-your-instance">Resuming your instance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#shutting-down-your-instance">Shutting down your instance</a><ul>
+<li><a class="reference internal" href="#restarting-your-instance">Restarting your instance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#deleting-your-instance">Deleting your instance</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../intro.html"
+                        title="previous chapter">Intro and Schedule</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ssh_changepassword.html"
+                        title="next chapter">Adding password to a Jetstream instance</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/jetstream/boot.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../index.html">Docs</a></li>
+              
+              <li>Booting a Jetstream Computer Instance for your use!</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="booting-a-jetstream-computer-instance-for-your-use">
+<span id="booting-a-jetstream-computer-instance-for-your-use"></span><h1>Booting a Jetstream Computer Instance for your use!<a class="headerlink" href="#booting-a-jetstream-computer-instance-for-your-use" title="Permalink to this headline">¶</a></h1>
+<p>What we’re going to do here is walk through starting up a running
+computer (an “instance”) on the Jetstream service.</p>
+<ul class="simple">
+<li>Jetstream is run by NSF and provides elastic cloud computing services.</li>
+<li>“Cloud” computing is a fancy word for being allowed to temporarily use someone else’s computer somewhere else with full administrative privaleges to install whatever software we want.</li>
+<li>Sometimes we need to use computing resources that are larger than our personal computers. Cloud computing lets us decide how much capacity we want to be using.</li>
+</ul>
+<p>If you would like to read more about cloud computing, see this <a class="reference external" href="http://www.datacarpentry.org/cloud-genomics/01-why-cloud-computing/">Carpentry Cloud Computing lesson</a>.</p>
+<p>Below, we’ve provided screenshots of the whole process. You can click
+on them to zoom in a bit.  The important areas to fill in are circled
+in red or pointed out with arrows.</p>
+<p>Some of the details may vary – for example, if you have your own XSEDE
+account, you may want to log in with that – and the name of the operating
+system or “Image” may also vary from “Ubuntu 18.04” or “DIBSI 2018” depending on the workshop.</p>
+<hr class="docutils" />
+<p>First, go to the Jetstream application at <a class="reference external" href="https://use.jetstream-cloud.org/application">https://use.jetstream-cloud.org/application</a>.</p>
+<p>Now:</p>
+<div class="section" id="request-to-log-in-to-the-jetstream-portal">
+<span id="request-to-log-in-to-the-jetstream-portal"></span><h2>Request to log in to the Jetstream Portal<a class="headerlink" href="#request-to-log-in-to-the-jetstream-portal" title="Permalink to this headline">¶</a></h2>
+<p>Click the login link in the upper right.</p>
+<p><img alt="login" src="../_images/login-1.thumb.png" /></p>
+</div>
+<div class="section" id="use-xsede">
+<span id="use-xsede"></span><h2>Use “XSEDE”<a class="headerlink" href="#use-xsede" title="Permalink to this headline">¶</a></h2>
+<p>Choose “XSEDE” as your account provider (it should be the default) and click
+on “Continue”.</p>
+<p><img alt="foo" src="../_images/login-2.thumb.png" /></p>
+</div>
+<div class="section" id="fill-in-the-username-and-password-and-click-sign-in">
+<span id="fill-in-the-username-and-password-and-click-sign-in"></span><h2>Fill in the username and password and click “Sign in”<a class="headerlink" href="#fill-in-the-username-and-password-and-click-sign-in" title="Permalink to this headline">¶</a></h2>
+<p>Fill in the username and then the password (which we will tell you in class).</p>
+<p><img alt="foo" src="../_images/login-3.thumb.png" /></p>
+</div>
+<div class="section" id="select-projects-and-create-new-project">
+<span id="select-projects-and-create-new-project"></span><h2>Select Projects and “Create New Project”<a class="headerlink" href="#select-projects-and-create-new-project" title="Permalink to this headline">¶</a></h2>
+<p>Now, this is something you only need to once if you have your own
+account - but if you’re using a shared account like tx160085, you will
+need a way to keep your computers separate from everyone else’s.</p>
+<p>We’ll do this with Projects, which give you a bit of a workspace in which
+to keep things that belong to “you”.</p>
+<p>Click on “Projects” up along the top.</p>
+<p><img alt="foo" src="../_images/login-5.thumb.png" /></p>
+</div>
+<div class="section" id="name-the-project-for-yourself-click-create">
+<span id="name-the-project-for-yourself-click-create"></span><h2>Name the project for yourself, click “create”<a class="headerlink" href="#name-the-project-for-yourself-click-create" title="Permalink to this headline">¶</a></h2>
+<p>Enter your name into the Project Name, and something simple like “ANGUS”
+into the description. Then click ‘create’.</p>
+<p><img alt="foo" src="../_images/login-6.thumb.png" /></p>
+</div>
+<div class="section" id="boot-an-instance-with-a-pre-built-image">
+<span id="boot-an-instance-with-a-pre-built-image"></span><h2>Boot an instance with a pre-built image<a class="headerlink" href="#boot-an-instance-with-a-pre-built-image" title="Permalink to this headline">¶</a></h2>
+<p>Select</p>
+<p><img alt="foo" src="../_images/Images.thumb.png" /></p>
+</div>
+<div class="section" id="find-the-dibsi-2018-workshop-image-image-click-on-it">
+<span id="find-the-dibsi-2018-workshop-image-image-click-on-it"></span><h2>Find the “DIBSI 2018 workshop image” image, click on it<a class="headerlink" href="#find-the-dibsi-2018-workshop-image-image-click-on-it" title="Permalink to this headline">¶</a></h2>
+<p>Enter “DIBSI” into the search bar - make sure it’s from
+June 22nd, 2018 by Titus. This images is based on Ubuntu 18.04 devel and docker, with Rstudio and <a class="reference external" href="https://bioconda.github.io/">bioconda</a> package manager added.</p>
+<p>Here, “image” refers to the resources that are pre-loaded into your computing workspace on your instance. Think of it like apps that come with your phone before you add new ones on your own. Loading the DIBSI image Titus built before the workshop prevents us from having to choose our operating distrubution and download frequently-used packages on our own, and makes sure that everyone at ANGUS has the same basic computing environment. That ensures that the commands we tell you to use will work, and makes it easier for TAs to figure out what’s wrong if you run into error messages.</p>
+<p><img alt="foo" src="../_images/Image_Search.thumb.png" /></p>
+<p>Launch</p>
+<p><img alt="foo" src="../_images/DIBSI2018_launch.thumb.png" /></p>
+</div>
+<div class="section" id="name-it-something-simple">
+<span id="name-it-something-simple"></span><h2>Name it something simple<a class="headerlink" href="#name-it-something-simple" title="Permalink to this headline">¶</a></h2>
+<p>Change the name after what we’re doing - “Day1_workshop_tutorial”, for example,
+but it doesn’t matter. Pull down the drop-down menu under ‘Project’ to select your name. Then make sure the appropriate Resources are selected. You probably won’t have to change these. The ‘Allocation Source’ will already be selected. (This is our XSEDE allocation grant ID.) The ‘m1.medium’ instance size will already be chosen. This is the minimum instance size. A larger instance can be selected, depending on what we will be doing. The ‘Provider’ will be randomly chosen as either ‘Jetstream - Indiana University’ or ‘Jetstream - TACC’.</p>
+<p><img alt="foo" src="../_images/Launch_Instance.thumb.png" /></p>
+</div>
+<div class="section" id="wait-for-it-to-become-active">
+<span id="wait-for-it-to-become-active"></span><h2>Wait for it to become active<a class="headerlink" href="#wait-for-it-to-become-active" title="Permalink to this headline">¶</a></h2>
+<p>It will now be booting up! This will take 2-15 minutes, depending.
+Just wait! Don’t reload or anything. When it is ready, the colored dot under “Status” will turn green and look like this:</p>
+<p><img alt="foo" src="../_images/login-11.thumb.png" /></p>
+</div>
+<div class="section" id="click-on-your-new-instance-to-get-more-information">
+<span id="click-on-your-new-instance-to-get-more-information"></span><h2>Click on your new instance to get more information!<a class="headerlink" href="#click-on-your-new-instance-to-get-more-information" title="Permalink to this headline">¶</a></h2>
+<p>Now, you can login to the instance! Note that you’ll need to use the private key
+file located in the #general channel in slack. The username will be specific to your classroom, e.g. <code class="docutils literal notranslate"><span class="pre">dibbears</span></code>, <code class="docutils literal notranslate"><span class="pre">diblions</span></code> or <code class="docutils literal notranslate"><span class="pre">dibtiger</span></code>. Use these log-in <a class="reference external" href="https://angus.readthedocs.io/en/2018/jetstream/login.html">instructions</a> for using a private-key.</p>
+<p>If you cannot access the terminal using the private key, a web shell is available:</p>
+<p><img alt="foo" src="../_images/login-12.thumb.png" /></p>
+</div>
+<div class="section" id="miscellany">
+<span id="miscellany"></span><h2>Miscellany<a class="headerlink" href="#miscellany" title="Permalink to this headline">¶</a></h2>
+<p>There’s a possibility that you’ll be confronted with this when you log in to jetstream:</p>
+<p><img alt="foo" src="../_images/possible_instance_problem.thumb.png" /></p>
+<p>A refresh of the page should get you past it. Please try not to actually move any instances to
+a new project; it’s probably someone else’s and it could confuse them :)</p>
+</div>
+<div class="section" id="suspend-your-instance">
+<span id="suspend-your-instance"></span><h2>Suspend your instance<a class="headerlink" href="#suspend-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>You can save your workspace so you can return to your instance at a later time without losing any of your files or information stored in memory, similiar to putting your physical computer to sleep. At the Instance Details screen, select the “Suspend” button.</p>
+<p><img alt="foo" src="../_images/suspend-1.png" /></p>
+<p>This will open up a dialogue window. Select the “Yes, suspend this instance” button.</p>
+<p><img alt="foo" src="../_images/suspend-2.png" /></p>
+<p>It may take Jetstream a few minutes to process, so wait until the progress bar says “Suspended.”</p>
+<div class="section" id="resuming-your-instance">
+<span id="resuming-your-instance"></span><h3>Resuming your instance<a class="headerlink" href="#resuming-your-instance" title="Permalink to this headline">¶</a></h3>
+<p>To <em>wake-up</em> your instance, select the “Resume” button.</p>
+<p><img alt="foo" src="../_images/resume-1.png" /></p>
+<p>This will open up a dialogue window. Select the “Yes, resume this instance” button.</p>
+<p><img alt="foo" src="../_images/resume-2.png" /></p>
+<p>It may take Jetstream a few minutes to process, so wait until the progress bar says “Active.”</p>
+<p><img alt="foo" src="../_images/resume-3.png" /></p>
+</div>
+</div>
+<div class="section" id="shutting-down-your-instance">
+<span id="shutting-down-your-instance"></span><h2>Shutting down your instance<a class="headerlink" href="#shutting-down-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>You can shut down your workspace so you can return to your instance another day without losing any of your files, similiar to shutting down your physical computer. You will retain your files, but you will lose any information stored in memory, such as your history on the command line. At the Instance Details screen, select the “Stop” button.</p>
+<p><img alt="foo" src="../_images/stop-1.png" /></p>
+<p>This will open up a dialogue window. Select the “Yes, stop this instance” button.</p>
+<p><img alt="foo" src="../_images/stop-2.png" /></p>
+<p>It may take Jetstream a few minutes to process, so wait until the progress bar says “Shutoff.”</p>
+<p><img alt="foo" src="../_images/stop-3.png" /></p>
+<p><img alt="foo" src="../_images/stop-4.png" /></p>
+<div class="section" id="restarting-your-instance">
+<span id="restarting-your-instance"></span><h3>Restarting your instance<a class="headerlink" href="#restarting-your-instance" title="Permalink to this headline">¶</a></h3>
+<p>To start your instance again, select the “Start” button.</p>
+<p><img alt="foo" src="../_images/start-1.png" /></p>
+<p>This will open up a dialogue window. Select the “Yes, start this instance” button.</p>
+<p><img alt="foo" src="../_images/start-2.png" /></p>
+<p>It may take Jetstream a few minutes to process, so wait until the progress bar says “Active.”</p>
+<p><img alt="foo" src="../_images/start-3.png" /></p>
+</div>
+</div>
+<div class="section" id="deleting-your-instance">
+<span id="deleting-your-instance"></span><h2>Deleting your instance<a class="headerlink" href="#deleting-your-instance" title="Permalink to this headline">¶</a></h2>
+<p>To completely remove your instance, you can select the “delete” buttom from the instance details page.</p>
+<p><img alt="foo" src="../_images/delete-1.png" /></p>
+<p>This will open up a dialogue window. Select the “Yes, delete this instance” button.</p>
+<p><img alt="foo" src="../_images/delete-2.png" /></p>
+<p>It may take Jetstream a few minutes to process your request. The instance should disappear from the project when it has been successfully deleted.</p>
+<p><img alt="foo" src="../_images/delete-3.png" /></p>
+<p><img alt="foo" src="../_images/delete-4.png" /></p>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="../intro.html" title="previous chapter (use the left arrow)">Intro and Schedule</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="ssh_changepassword.html" title="next chapter (use the right arrow)">Adding password to a Jetstream instance</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ssh_changepassword.html" title="Adding password to a Jetstream instance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../intro.html" title="Intro and Schedule"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Elias Oziolor. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

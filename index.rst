@@ -6,3 +6,6 @@ Welcome to mRNAseq workshop 2018!
    :caption: Contents:
 
    intro.md
+   jetstream/boot.md
+   jetstream/ssh_changepassword.md
+   jetstream-bioconda-config.md
