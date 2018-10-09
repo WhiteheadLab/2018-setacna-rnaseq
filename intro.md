@@ -19,7 +19,3 @@ Here are your instructors for the day:
 
 ![](https://whiteheadresearch.files.wordpress.com/2012/05/cohen.jpg =199x) ![](https://whiteheadresearch.files.wordpress.com/2012/05/036c84b-e1429642946393.jpg =188x) ![](https://whiteheadresearch.files.wordpress.com/2012/05/elias1-e1504896758344.png =200x) 
 
-Intro and Schedule
-===
-
-* Whatup y'all
