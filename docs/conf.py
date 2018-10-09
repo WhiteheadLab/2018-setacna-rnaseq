@@ -18,6 +18,8 @@
 
 import sys, os
 
+import guzzle_sphinx_theme
+
 
 # -- Project information -----------------------------------------------------
 
@@ -50,7 +52,7 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = ['.md']
+source_suffix = ['.rst','.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -70,12 +72,17 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+# If true, `todo` and `todoList` produce output, else they produce nothing.
+todo_include_todos = False
 
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
+html_translator_class = 'guzzle_sphinx_theme.HTMLTranslator'
+html_theme_path = guzzle_sphinx_theme.html_theme_path()
+html_theme = 'guzzle_sphinx_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -153,4 +160,12 @@ texinfo_documents = [
      author, 'setac-omics', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+from recommonmark.parser import CommonMarkParser
+
+source_parsers = {
+    '.md': CommonMarkParser,
+}
+
+source_suffix = ['.rst', '.md']
 
