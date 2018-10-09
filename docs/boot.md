@@ -1,4 +1,5 @@
-# Booting a Jetstream Computer Instance for your use!
+Booting a Jetstream Computer Instance for your use!
+***************************************************
 
 What we're going to do here is walk through starting up a running
 computer (an "instance") on the Jetstream service. 

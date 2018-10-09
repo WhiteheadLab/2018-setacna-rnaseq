@@ -1,9 +1,4 @@
 Coolest workshop ever
-===
+*********************
 
-
-Jetstream
-*********
-
-Jetstream2
-**********
+This sucks so bad

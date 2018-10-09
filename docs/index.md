@@ -3,6 +3,6 @@
    :numbered:
    
    intro.md
-   jetstream/boot.md
-   jetstream/ssh_changepassword.md
+   boot.md
+   ssh_changepassword.md
 

@@ -1,4 +1,5 @@
-# Adding password to a Jetstream instance
+Adding password to a Jetstream instance
+***************************************
 
 To add a password to your Jetstream instance, 'Open the Web Shell' from the instance page.
 
