@@ -2,8 +2,8 @@ Welcome to mRNAseq workshop 2018!
 =================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
+   :numbered:
 
    intro.md
    jetstream/boot.md

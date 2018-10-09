@@ -2,7 +2,7 @@ Welcome to mRNAseq workshop 2018!
 =================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :numbered:
 
    intro.md
