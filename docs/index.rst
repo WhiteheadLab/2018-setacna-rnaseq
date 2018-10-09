@@ -2,7 +2,7 @@
    :maxdepth: 2
    :numbered:
    
-   docs/intro.md
+   intro.md
    boot.md
    ssh_changepassword.md
 
