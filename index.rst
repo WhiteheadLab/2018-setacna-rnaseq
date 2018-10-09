@@ -6,11 +6,3 @@ Welcome to mRNAseq workshop 2018!
    :caption: Contents:
 
    intro.md
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
