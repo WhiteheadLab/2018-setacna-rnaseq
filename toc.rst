@@ -2,7 +2,7 @@ Table of contents
 =================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :numbered:
 
    index.md
