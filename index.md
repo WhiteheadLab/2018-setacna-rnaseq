@@ -1,25 +1,22 @@
-SETAC 2018 RNAseq Workshop
+Welcome to SETAC-NA 2018 RNAseq workshop!
 ===
-###### tags: `workshop` `setac`
 
-## Introductions
+We are very excited to have you here and hope that we can get through a lot of material today!
 
-Hi everyone and thank you for joining us for the mRNA sequencing workshop at SETAC-NA 2018 in Sacramento. We are excited for this workshop, but we also have a lot to cover. Bear with us and we will try to have you leave with a set of skills that can be applied to your data.
+# Instructors
 
-### Here are your instructors for the day:
-![Lisa](https://whiteheadresearch.files.wordpress.com/2012/05/cohen.jpg) 
-* __Lisa Johnson__ - PhD Candidate at UC Davis
-    * Lisa is highly experienced in pipeline automation and has dealt with large transcriptomic datasets including:
-        * ~700 marine invertebrate transcriptome re-assembly and optimization
-        * transcriptomic assessment of osmotic challenge responses of 16 Fundulids adapted to various osmotic environments).
+Lisa Johnson
+Jane Park
+Elias Oziolor
 
-![Jane](https://whiteheadresearch.files.wordpress.com/2012/05/036c84b-e1429642946393.jpg) 
-* __Jane Park__ - PhD Candidate at UC Davis
-    * Jane spends her time between the lab, where she samples embryonic _Fundulus heteroclitus_ exposed to oil and creating custom computational pipelines to analize differential expression to understand the impacts of oil on trans-generational responses.
+# Schedule in brief
 
-![Elias](https://whiteheadresearch.files.wordpress.com/2012/05/elias1-e1504896758344.png) 
-* __Elias Oziolor__ - Postdoctoral Fellow at UC Davis
-    * Elias spent his dissertation time exploring the mechanism of adaptation which allows _F. grandis_ to adapt to heavy contamination
-    * Currently he is working on developing computational tools for analyzing time-series population genomic data to understand the effects of population collapse in Pacific herring (_Clupea pallasii_), as well as assisting with the transcriptomic assessment of responses of herring to early developmental co-exposure of oil and viral challenge.
-
-
+8:00-9:30am [Introduction and experimental design](https://setac-omics.readthedocs.io/en/latest/intro.html)
+9:30-9:45am Coffee and sugar
+9:45-11:45am [Jetstream and bash](https://setac-omics.readthedocs.io/en/latest/boot.html)
+11:45am-1:00pm Lunch
+1:00-2:00pm [Triming sequencing data]()
+2:00-3:00pm [Transcriptome assembly]()
+3:00-3:15pm Coffee and sugar
+3:15-4:15pm [Alignment and Read quantitation]()
+4:15-5:15pm [Differential expression]()

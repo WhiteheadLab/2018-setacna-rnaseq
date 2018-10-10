@@ -1,4 +1,4 @@
-Welcome to mRNAseq workshop 2018!
+Table of contents
 =================================
 
 .. toctree::
@@ -6,6 +6,8 @@ Welcome to mRNAseq workshop 2018!
    :numbered:
 
    index.md
+
+   intro.md
 
    jetstream/boot.md
 
