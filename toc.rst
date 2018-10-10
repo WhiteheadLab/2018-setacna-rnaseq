@@ -14,3 +14,9 @@ Table of contents
    jetstream/ssh_changepassword.md
 
    jetstream-bioconda-config.md
+
+   quality-trimming.md
+
+   transcriptome-assembly.md
+
+   rnaseq-quant.md
