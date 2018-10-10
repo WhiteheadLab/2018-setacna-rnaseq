@@ -5,7 +5,10 @@ Welcome to mRNAseq workshop 2018!
    :maxdepth: 1
    :numbered:
 
-   intro.md
+   index.md
+
    jetstream/boot.md
+
    jetstream/ssh_changepassword.md
+
    jetstream-bioconda-config.md
