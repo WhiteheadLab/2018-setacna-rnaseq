@@ -20,5 +20,5 @@ We are very excited to have you here and hope that we can get through a lot of m
 * 1:00-2:00pm [Trimming sequencing data](https://setac-omics.readthedocs.io/en/latest/quality-trimming.html)
 * 2:00-3:00pm [Transcriptome assembly](https://setac-omics.readthedocs.io/en/latest/transcriptome-assembly.html)
 * 3:00-3:15pm Coffee and sugar
-* 3:15-4:15pm [Alignment and Read quantitation](https://setac-omics.readthedocs.io/en/latest/rnaseq-quant.html)
+* 3:15-4:15pm [Alignment and Read quantification](https://setac-omics.readthedocs.io/en/latest/rnaseq-quant.html)
 * 4:15-5:15pm [Differential expression](https://setac-omics.readthedocs.io/en/latest/DE.html)
