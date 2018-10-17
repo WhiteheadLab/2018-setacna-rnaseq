@@ -11,51 +11,7 @@ References:
 
 [DE lecture by Jane Khudyakov, July 2017](_static/Jane_differential_expression.pdf)
 
-## Upgrade R (3.4.x)
 
-```
-sudo echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" | sudo tee -a /etc/apt/sources.list
-gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
-gpg -a --export E084DAB9 | sudo apt-key add -
-
-sudo apt-get update && sudo apt-get install -y r-base r-base-dev gdebi-core
-
-```
-## Install RStudio Web server
-
-For this, we will be working in RStudio! 
-
-```
-wget https://download2.rstudio.org/rstudio-server-1.0.143-amd64.deb
-sudo gdebi -n rstudio-server-1.0.143-amd64.deb
-```
-
-Change the password to something you can remember:
-```
-sudo passwd username
-```
-
-## Make sure you're running RStudio
-
-Try to connect to a running RStudio Web server instance -- you can get the Web address by
-running this command:
-
-```
-echo My RStudio Web server is running at: http://$(hostname):8787/
-```
-
-## Install DESeq2 prereqs
-
-```
-sudo apt-get install -y libxml2 libxml2-dev libcurl4-gnutls-dev libssl-dev
-```
-
-Then install DESeq2. This will take some time (>10 min). Good time for coffee break!
-
-```
-curl -O -L https://github.com/ngs-docs/angus/raw/2017/_static/install-deseq2.R
-sudo Rscript --no-save install-deseq2.R
-```
 
 ## Move salmon output quant files to their own directory
 
