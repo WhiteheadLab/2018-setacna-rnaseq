@@ -65,12 +65,12 @@ Select
 
 ![foo](images/Images.thumb.png)
 
-## Find the "DIBSI 2018 workshop image" image, click on it
+## Find the "Ubuntu 18.04 Devel and Docker"  base image (Oct 1, 2018 by jfischer), click on it
 
-Enter "DIBSI" into the search bar - make sure it's from
-June 22nd, 2018 by Titus. This images is based on Ubuntu 18.04 devel and docker, with Rstudio and [bioconda](https://bioconda.github.io/) package manager added.
+Enter "Ubuntu 18.04" into the search bar - make sure it's from
+Oct 1st, 2018 by jfischer. This images is based on Ubuntu 18.04 devel and docker, with Rstudio and [bioconda](https://bioconda.github.io/) package manager added.
 
-Here, "image" refers to the resources that are pre-loaded into your computing workspace on your instance. Think of it like apps that come with your phone before you add new ones on your own. Loading the DIBSI image Titus built before the workshop prevents us from having to choose our operating distrubution and download frequently-used packages on our own, and makes sure that everyone at ANGUS has the same basic computing environment. That ensures that the commands we tell you to use will work, and makes it easier for TAs to figure out what's wrong if you run into error messages.
+Here, "image" refers to the resources that are pre-loaded into your computing workspace on your instance. Think of it like apps that come with your phone before you add new ones on your own. Loading this image built before the workshop prevents us from having to choose our operating distrubution and download frequently-used packages on our own, and makes sure that everyone at the workshop has the same basic computing environment. That ensures that the commands we tell you to use will work, and makes it easier for TAs to figure out what's wrong if you run into error messages.
 
 ![foo](images/Image_Search.thumb.png)
            
@@ -80,8 +80,8 @@ Launch
 
 ## Name it something simple
 
-Change the name after what we're doing - "Day1_workshop_tutorial", for example,
-but it doesn't matter. Pull down the drop-down menu under 'Project' to select your name. Then make sure the appropriate Resources are selected. You probably won't have to change these. The 'Allocation Source' will already be selected. (This is our XSEDE allocation grant ID.) The 'm1.medium' instance size will already be chosen. This is the minimum instance size. A larger instance can be selected, depending on what we will be doing. The 'Provider' will be randomly chosen as either 'Jetstream - Indiana University' or 'Jetstream - TACC'.
+Change the name after what we're doing - "RNAseq SETAC", for example,
+but it doesn't matter. Pull down the drop-down menu under 'Project' to select your name. Then make sure the appropriate Resources are selected. You probably won't have to change these. The 'Allocation Source' will already be selected. (This is our XSEDE allocation grant ID.) Choose the 'm1.large' instance size. This is the minimum instance size. A larger instance can be selected, depending on what we will be doing. The 'Provider' will be randomly chosen as either 'Jetstream - Indiana University' or 'Jetstream - TACC'.
 
 ![foo](images/Launch_Instance.thumb.png)
 
@@ -95,7 +95,7 @@ Just wait! Don't reload or anything. When it is ready, the colored dot under "St
 ## Click on your new instance to get more information!
 
 Now, you can login to the instance! Note that you'll need to use the private key
-file located in the #general channel in slack. The username will be specific to your classroom, e.g. `dibbears`, `diblions` or `dibtiger`. Use these log-in [instructions](https://angus.readthedocs.io/en/2018/jetstream/login.html) for using a private-key.
+file located in the #general channel in slack. The username will be specific to your classroom, e.g. `dibbears`, `diblions` or `dibtiger`. Use these log-in [instructions](https://setac-omics.readthedocs.io/en/latest/jetstream/login.html) for using a private-key.
 
 If you cannot access the terminal using the private key, a web shell is available:
 
