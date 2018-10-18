@@ -16,7 +16,7 @@
   <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>4. Jetstream: install bioconda on a blank Linux machine. &#8212; 2018-setacna-rnaseq 0.0.1 documentation</title>
+    <title>5. Jetstream: install bioconda on a blank Linux machine. &#8212; 2018-setacna-rnaseq 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" src="_static/documentation_options.js"></script>
@@ -25,7 +25,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="3. Adding password to a Jetstream instance" href="jetstream/ssh_changepassword.html" />
+    <link rel="next" title="6. Short read quality and trimming" href="quality-trimming.html" />
+    <link rel="prev" title="4. Logging in to jetstream from your local terminal with a key file" href="jetstream/login.html" />
   
    
 
@@ -37,7 +38,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="jetstream/ssh_changepassword.html" title="3. Adding password to a Jetstream instance"
+          <a href="quality-trimming.html" title="6. Short read quality and trimming"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="jetstream/login.html" title="4. Logging in to jetstream from your local terminal with a key file"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
       </ul>
@@ -54,21 +58,21 @@
     <h2>Contents</h2>
     <div class="sidebar-localtoc">
       <ul>
-<li><a class="reference internal" href="#">4. Jetstream: install bioconda on a blank Linux machine.</a><ul>
-<li><a class="reference internal" href="#booting-a-blank-machine">4.1. Booting a “blank” machine</a></li>
-<li><a class="reference internal" href="#what-is-bioconda">4.2. What is bioconda?</a></li>
-<li><a class="reference internal" href="#what-problems-does-conda-and-therefore-bioconda-solve">4.3. What problems does conda (and therefore bioconda) solve?</a></li>
-<li><a class="reference internal" href="#installing-conda-and-enabling-bioconda">4.4. Installing conda and enabling bioconda</a></li>
-<li><a class="reference internal" href="#using-conda">4.5. Using conda</a></li>
-<li><a class="reference internal" href="#using-bioconda">4.6. Using bioconda</a><ul>
-<li><a class="reference internal" href="#finding-bioconda-packages">4.6.1. Finding bioconda packages</a></li>
-<li><a class="reference internal" href="#freezing-an-environment">4.6.2. Freezing an environment</a></li>
-<li><a class="reference internal" href="#constructing-and-using-multiple-environments">4.6.3. Constructing and using multiple environments</a></li>
-<li><a class="reference internal" href="#meditations-on-reproducibility-and-provenance">4.6.4. Meditations on reproducibility and provenance</a></li>
-<li><a class="reference internal" href="#using-it-on-your-own-compute-system-laptop-or-hpc">4.6.5. Using it on your own compute system (laptop or HPC)</a></li>
+<li><a class="reference internal" href="#">5. Jetstream: install bioconda on a blank Linux machine.</a><ul>
+<li><a class="reference internal" href="#booting-a-blank-machine">5.1. Booting a “blank” machine</a></li>
+<li><a class="reference internal" href="#what-is-bioconda">5.2. What is bioconda?</a></li>
+<li><a class="reference internal" href="#what-problems-does-conda-and-therefore-bioconda-solve">5.3. What problems does conda (and therefore bioconda) solve?</a></li>
+<li><a class="reference internal" href="#installing-conda-and-enabling-bioconda">5.4. Installing conda and enabling bioconda</a></li>
+<li><a class="reference internal" href="#using-conda">5.5. Using conda</a></li>
+<li><a class="reference internal" href="#using-bioconda">5.6. Using bioconda</a><ul>
+<li><a class="reference internal" href="#finding-bioconda-packages">5.6.1. Finding bioconda packages</a></li>
+<li><a class="reference internal" href="#freezing-an-environment">5.6.2. Freezing an environment</a></li>
+<li><a class="reference internal" href="#constructing-and-using-multiple-environments">5.6.3. Constructing and using multiple environments</a></li>
+<li><a class="reference internal" href="#meditations-on-reproducibility-and-provenance">5.6.4. Meditations on reproducibility and provenance</a></li>
+<li><a class="reference internal" href="#using-it-on-your-own-compute-system-laptop-or-hpc">5.6.5. Using it on your own compute system (laptop or HPC)</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#bonus-installing-rstudio-web-on-your-running-linux-box">4.7. Bonus: installing RStudio Web on your running Linux box.</a></li>
+<li><a class="reference internal" href="#bonus-installing-rstudio-web-on-your-running-linux-box">5.7. Bonus: installing RStudio Web on your running Linux box.</a></li>
 </ul>
 </li>
 </ul>
@@ -77,8 +81,11 @@
   </div>
 </div>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="jetstream/ssh_changepassword.html"
-                        title="previous chapter">3. Adding password to a Jetstream instance</a></p>
+  <p class="topless"><a href="jetstream/login.html"
+                        title="previous chapter">4. Logging in to jetstream from your local terminal with a key file</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="quality-trimming.html"
+                        title="next chapter">6. Short read quality and trimming</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -108,14 +115,14 @@
             <ol class="breadcrumb">
               <li><a href="toc.html">Docs</a></li>
               
-              <li>4. Jetstream: install bioconda on a blank Linux machine.</li>
+              <li>5. Jetstream: install bioconda on a blank Linux machine.</li>
             </ol>
           </div>
           
           <div class="document clearer body">
             
   <div class="section" id="jetstream-install-bioconda-on-a-blank-linux-machine">
-<span id="jetstream-install-bioconda-on-a-blank-linux-machine"></span><h1>4. Jetstream: install bioconda on a blank Linux machine.<a class="headerlink" href="#jetstream-install-bioconda-on-a-blank-linux-machine" title="Permalink to this headline">¶</a></h1>
+<span id="jetstream-install-bioconda-on-a-blank-linux-machine"></span><h1>5. Jetstream: install bioconda on a blank Linux machine.<a class="headerlink" href="#jetstream-install-bioconda-on-a-blank-linux-machine" title="Permalink to this headline">¶</a></h1>
 <p>Learning objections:</p>
 <ul class="simple">
 <li>learn what bioconda is and how to install it</li>
@@ -124,26 +131,26 @@
 <li>learn how to manage multiple installation environments</li>
 </ul>
 <div class="section" id="booting-a-blank-machine">
-<span id="booting-a-blank-machine"></span><h2>4.1. Booting a “blank” machine<a class="headerlink" href="#booting-a-blank-machine" title="Permalink to this headline">¶</a></h2>
+<span id="booting-a-blank-machine"></span><h2>5.1. Booting a “blank” machine<a class="headerlink" href="#booting-a-blank-machine" title="Permalink to this headline">¶</a></h2>
 <p>Follow <a class="reference external" href="https://angus.readthedocs.io/en/2018/jetstream/boot.html">ANGUS instructions, with m1.medium</a>, using “18.04 Ubuntu devel and docker” as the starting image you select – rather than “DIBSI 2018 workshop image”.</p>
 <p>Log in via the <a class="reference external" href="https://angus.readthedocs.io/en/2018/jetstream/boot.html#click-on-your-new-instance-to-get-more-information">Web shell or through ssh in your terminal</a> if you are comfortable with that way now.</p>
 <p>Note that neither RStudio nor conda are installed.</p>
 </div>
 <div class="section" id="what-is-bioconda">
-<span id="what-is-bioconda"></span><h2>4.2. What is bioconda?<a class="headerlink" href="#what-is-bioconda" title="Permalink to this headline">¶</a></h2>
+<span id="what-is-bioconda"></span><h2>5.2. What is bioconda?<a class="headerlink" href="#what-is-bioconda" title="Permalink to this headline">¶</a></h2>
 <p>See <a class="reference external" href="https://www.biorxiv.org/content/early/2017/10/27/207092">the bioconda paper</a> and the <a class="reference external" href="http://bioconda.github.io">bioconda web site</a>.</p>
 <p>Bioconda is a community-enabled repository of 3,000+ bioinformatics packages, installable via the <code class="docutils literal notranslate"><span class="pre">conda</span></code> package
 manager.  It consists of a set of recipes, <a class="reference external" href="https://github.com/bioconda/bioconda-recipes/blob/master/recipes/sourmash/meta.yaml">like this one, for sourmash</a>, that are maintained by the community.</p>
 <p>It just works, and it’s effin’ magic!!</p>
 </div>
 <div class="section" id="what-problems-does-conda-and-therefore-bioconda-solve">
-<span id="what-problems-does-conda-and-therefore-bioconda-solve"></span><h2>4.3. What problems does conda (and therefore bioconda) solve?<a class="headerlink" href="#what-problems-does-conda-and-therefore-bioconda-solve" title="Permalink to this headline">¶</a></h2>
+<span id="what-problems-does-conda-and-therefore-bioconda-solve"></span><h2>5.3. What problems does conda (and therefore bioconda) solve?<a class="headerlink" href="#what-problems-does-conda-and-therefore-bioconda-solve" title="Permalink to this headline">¶</a></h2>
 <p>Conda tracks installed packages and their versions.</p>
 <p>Conda makes sure that different installed packages don’t have
 conflicting dependencies (we’ll explain this below).</p>
 </div>
 <div class="section" id="installing-conda-and-enabling-bioconda">
-<span id="installing-conda-and-enabling-bioconda"></span><h2>4.4. Installing conda and enabling bioconda<a class="headerlink" href="#installing-conda-and-enabling-bioconda" title="Permalink to this headline">¶</a></h2>
+<span id="installing-conda-and-enabling-bioconda"></span><h2>5.4. Installing conda and enabling bioconda<a class="headerlink" href="#installing-conda-and-enabling-bioconda" title="Permalink to this headline">¶</a></h2>
 <p>Download and install conda:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">O</span> <span class="o">-</span><span class="n">L</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">repo</span><span class="o">.</span><span class="n">continuum</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
 <span class="n">bash</span> <span class="n">Miniconda3</span><span class="o">-</span><span class="n">latest</span><span class="o">-</span><span class="n">Linux</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">sh</span>
@@ -172,24 +179,24 @@ conflicting dependencies (we’ll explain this below).</p>
 <p>yay!</p>
 </div>
 <div class="section" id="using-conda">
-<span id="using-conda"></span><h2>4.5. Using conda<a class="headerlink" href="#using-conda" title="Permalink to this headline">¶</a></h2>
+<span id="using-conda"></span><h2>5.5. Using conda<a class="headerlink" href="#using-conda" title="Permalink to this headline">¶</a></h2>
 <p>Conda is a “package manager” or software installer. See <a class="reference external" href="https://conda.io/docs/commands.html">the full list of commands</a>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> to install a package.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code> to list installed packages.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code> to search packages. Note that you’ll see one package for every version of the software and for every version of Python (e.g. <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span> <span class="pre">sourmash</span></code>).</p>
 </div>
 <div class="section" id="using-bioconda">
-<span id="using-bioconda"></span><h2>4.6. Using bioconda<a class="headerlink" href="#using-bioconda" title="Permalink to this headline">¶</a></h2>
+<span id="using-bioconda"></span><h2>5.6. Using bioconda<a class="headerlink" href="#using-bioconda" title="Permalink to this headline">¶</a></h2>
 <p>bioconda is a channel for conda, which just means that you
 can “add” it to conda as a source of packages. That’s what the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">config</span></code> above does.</p>
 <p>Note, Bioconda supports only 64-bit Linux and Mac OSX.</p>
 <p>You can check out <a class="reference external" href="https://bioconda.github.io/">the bioconda site</a>.</p>
 <div class="section" id="finding-bioconda-packages">
-<span id="finding-bioconda-packages"></span><h3>4.6.1. Finding bioconda packages<a class="headerlink" href="#finding-bioconda-packages" title="Permalink to this headline">¶</a></h3>
+<span id="finding-bioconda-packages"></span><h3>5.6.1. Finding bioconda packages<a class="headerlink" href="#finding-bioconda-packages" title="Permalink to this headline">¶</a></h3>
 <p>You can use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code>, or you can use google, or you can go visit <a class="reference external" href="https://bioconda.github.io/recipes.html#recipes">the list of recipes</a>.</p>
 </div>
 <div class="section" id="freezing-an-environment">
-<span id="freezing-an-environment"></span><h3>4.6.2. Freezing an environment<a class="headerlink" href="#freezing-an-environment" title="Permalink to this headline">¶</a></h3>
+<span id="freezing-an-environment"></span><h3>5.6.2. Freezing an environment<a class="headerlink" href="#freezing-an-environment" title="Permalink to this headline">¶</a></h3>
 <p>This will save the list of <strong>conda-installed</strong> software you have in a particular
 environment to the file <code class="docutils literal notranslate"><span class="pre">packages.txt</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="nb">list</span> <span class="o">--</span><span class="n">export</span> <span class="n">packages</span><span class="o">.</span><span class="n">txt</span>
@@ -202,7 +209,7 @@ environment to the file <code class="docutils literal notranslate"><span class="
 <p>will install those packages in your local environment.</p>
 </div>
 <div class="section" id="constructing-and-using-multiple-environments">
-<span id="constructing-and-using-multiple-environments"></span><h3>4.6.3. Constructing and using multiple environments<a class="headerlink" href="#constructing-and-using-multiple-environments" title="Permalink to this headline">¶</a></h3>
+<span id="constructing-and-using-multiple-environments"></span><h3>5.6.3. Constructing and using multiple environments<a class="headerlink" href="#constructing-and-using-multiple-environments" title="Permalink to this headline">¶</a></h3>
 <p>A feature that we do not use much here, but that can be very
 handy in some circumstances, is different environments.</p>
 <p>“Environments” are multiple different collections of installed software. There are two reasons you might want to do this:</p>
@@ -237,7 +244,7 @@ current environment.</p>
 <p>and you’ll be back in the original environment.</p>
 </div>
 <div class="section" id="meditations-on-reproducibility-and-provenance">
-<span id="meditations-on-reproducibility-and-provenance"></span><h3>4.6.4. Meditations on reproducibility and provenance<a class="headerlink" href="#meditations-on-reproducibility-and-provenance" title="Permalink to this headline">¶</a></h3>
+<span id="meditations-on-reproducibility-and-provenance"></span><h3>5.6.4. Meditations on reproducibility and provenance<a class="headerlink" href="#meditations-on-reproducibility-and-provenance" title="Permalink to this headline">¶</a></h3>
 <p>If you want to impress reviewers and also keep track of
 what your software versions are, you can:</p>
 <ul class="simple">
@@ -247,7 +254,7 @@ what your software versions are, you can:</p>
 <p>This is also something that you can record for yourself, so that if you are trying to exactly reproduce</p>
 </div>
 <div class="section" id="using-it-on-your-own-compute-system-laptop-or-hpc">
-<span id="using-it-on-your-own-compute-system-laptop-or-hpc"></span><h3>4.6.5. Using it on your own compute system (laptop or HPC)<a class="headerlink" href="#using-it-on-your-own-compute-system-laptop-or-hpc" title="Permalink to this headline">¶</a></h3>
+<span id="using-it-on-your-own-compute-system-laptop-or-hpc"></span><h3>5.6.5. Using it on your own compute system (laptop or HPC)<a class="headerlink" href="#using-it-on-your-own-compute-system-laptop-or-hpc" title="Permalink to this headline">¶</a></h3>
 <p>conda works on Windows, Mac, and Linux.</p>
 <p>bioconda works on Mac and Linux.</p>
 <p>It does not require admin privileges to install, so you can
@@ -255,7 +262,7 @@ install it on your own local cluster quite easily.</p>
 </div>
 </div>
 <div class="section" id="bonus-installing-rstudio-web-on-your-running-linux-box">
-<span id="bonus-installing-rstudio-web-on-your-running-linux-box"></span><h2>4.7. Bonus: installing RStudio Web on your running Linux box.<a class="headerlink" href="#bonus-installing-rstudio-web-on-your-running-linux-box" title="Permalink to this headline">¶</a></h2>
+<span id="bonus-installing-rstudio-web-on-your-running-linux-box"></span><h2>5.7. Bonus: installing RStudio Web on your running Linux box.<a class="headerlink" href="#bonus-installing-rstudio-web-on-your-running-linux-box" title="Permalink to this headline">¶</a></h2>
 <p><strong>Note:</strong> this does require admin privileges, and you cannot run it on your local cluster. For your laptop, you can just install <a class="reference external" href="https://www.rstudio.com">the regular RStudio</a>.</p>
 <hr class="docutils" />
 <p>Install necessary system software (gdebi and R):</p>
@@ -277,9 +284,12 @@ install it on your own local cluster quite easily.</p>
   <div class="footer-relations">
     
       <div class="pull-left">
-        <a class="btn btn-default" href="jetstream/ssh_changepassword.html" title="previous chapter (use the left arrow)">3. Adding password to a Jetstream instance</a>
+        <a class="btn btn-default" href="jetstream/login.html" title="previous chapter (use the left arrow)">4. Logging in to jetstream from your local terminal with a key file</a>
       </div>
     
+      <div class="pull-right">
+        <a class="btn btn-default" href="quality-trimming.html" title="next chapter (use the right arrow)">6. Short read quality and trimming</a>
+      </div>
     </div>
     <div class="clearer"></div>
   
@@ -293,7 +303,10 @@ install it on your own local cluster quite easily.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="jetstream/ssh_changepassword.html" title="3. Adding password to a Jetstream instance"
+          <a href="quality-trimming.html" title="6. Short read quality and trimming"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="jetstream/login.html" title="4. Logging in to jetstream from your local terminal with a key file"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
       </ul>

@@ -11,7 +11,7 @@ Table of contents
 
    jetstream/boot.md
 
-   jetstream/ssh_changepassword.md
+   jetstream/login.md
 
    jetstream-bioconda-config.md
 

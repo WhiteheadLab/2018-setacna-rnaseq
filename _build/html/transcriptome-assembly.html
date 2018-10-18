@@ -1,0 +1,301 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>7. Transcriptome assembly - some basics &#8212; 2018-setacna-rnaseq 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8. RNAseq" href="rnaseq-quant.html" />
+    <link rel="prev" title="6. Short read quality and trimming" href="quality-trimming.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="rnaseq-quant.html" title="8. RNAseq"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="quality-trimming.html" title="6. Short read quality and trimming"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">7. Transcriptome assembly - some basics</a><ul>
+<li><a class="reference internal" href="#boot-up-a-jetstream">7.1. Boot up a Jetstream</a></li>
+<li><a class="reference internal" href="#install-the-trinity-assembler">7.2. Install the TRINITY assembler</a></li>
+<li><a class="reference internal" href="#change-to-a-new-working-directory-and-link-the-original-data">7.3. Change to a new working directory and link the original data</a></li>
+<li><a class="reference internal" href="#applying-digital-normalization">7.4. Applying Digital Normalization</a></li>
+<li><a class="reference internal" href="#trim-off-likely-erroneous-k-mers">7.5. Trim off likely erroneous k-mers</a><ul>
+<li><a class="reference internal" href="#run-the-assembler">7.5.1. Run the assembler</a></li>
+<li><a class="reference internal" href="#looking-at-the-assembly">7.5.2. Looking at the assembly</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="quality-trimming.html"
+                        title="previous chapter">6. Short read quality and trimming</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="rnaseq-quant.html"
+                        title="next chapter">8. RNAseq</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/transcriptome-assembly.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="toc.html">Docs</a></li>
+              
+              <li>7. Transcriptome assembly - some basics</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="transcriptome-assembly-some-basics">
+<span id="transcriptome-assembly-some-basics"></span><h1>7. Transcriptome assembly - some basics<a class="headerlink" href="#transcriptome-assembly-some-basics" title="Permalink to this headline">¶</a></h1>
+<p>Learning objectives:</p>
+<ul class="simple">
+<li>Learn what is Transcriptome assembly?</li>
+<li>Different types of assemblies</li>
+<li>How do assemblers work?</li>
+<li>Checking the quality of assembly</li>
+<li>Understanding Transcriptome assembly</li>
+</ul>
+<p>In <a class="reference external" href="http://angus.readthedocs.io/en/2018/mapping-variant-calling.html">variant calling</a>, we mapped reads to a reference and looked systematically for differences.</p>
+<p>But what if you don’t have a reference? How do you construct one?</p>
+<p>The answer is <em>de novo</em> assembly, and the basic idea is you feed in your reads and you get out a bunch of <em>contigs</em>, that represent stretches of RNA present in the reads that don’t have any long repeats or much significant polymorphism.  Like everything else, the basic idea is that you run a program, feed in the reads, and get out a pile of assembled RNA.</p>
+<p>Trinity, developed at the <a class="reference external" href="http://www.broadinstitute.org/">Broad Institute</a> and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. We will be using the <a class="reference external" href="https://eel-pond.readthedocs.io/en/latest">eel-pond protocol</a> for our guide to doing RNA-seq assembly.</p>
+<div class="section" id="boot-up-a-jetstream">
+<span id="boot-up-a-jetstream"></span><h2>7.1. Boot up a Jetstream<a class="headerlink" href="#boot-up-a-jetstream" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="jetstream/boot.md">Boot an m1.medium Jetstream instance</a> and log in.</p>
+</div>
+<div class="section" id="install-the-trinity-assembler">
+<span id="install-the-trinity-assembler"></span><h2>7.2. Install the TRINITY assembler<a class="headerlink" href="#install-the-trinity-assembler" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pubmed/21572440">Trinity assembler</a> can also install it through <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">trinity</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="change-to-a-new-working-directory-and-link-the-original-data">
+<span id="change-to-a-new-working-directory-and-link-the-original-data"></span><h2>7.3. Change to a new working directory and link the original data<a class="headerlink" href="#change-to-a-new-working-directory-and-link-the-original-data" title="Permalink to this headline">¶</a></h2>
+<p>We will be using the same data as before (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/">Schurch et al, 2016</a>), so the following commands will create a new folder <code class="docutils literal notranslate"><span class="pre">assembly</span></code> and link the trimmed data we prepared earlier in the newly created folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~/</span>
+<span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">assembly</span>
+<span class="n">cd</span> <span class="n">assembly</span>
+
+<span class="n">ln</span> <span class="o">-</span><span class="n">fs</span> <span class="o">~/</span><span class="n">quality</span><span class="o">/*.</span><span class="n">qc</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span> <span class="o">.</span>
+<span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="applying-digital-normalization">
+<span id="applying-digital-normalization"></span><h2>7.4. Applying Digital Normalization<a class="headerlink" href="#applying-digital-normalization" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we’ll apply <a class="reference external" href="http://arxiv.org/abs/1203.4802">digital normalization</a> and <a class="reference external" href="https://peerj.com/preprints/890/">variable-coverage k-mer abundance trimming</a> to the reads prior to assembly. This has the effect of reducing the computational cost of assembly <a class="reference external" href="https://peerj.com/preprints/505/">without negatively affecting the quality of the assembly</a>. Although the appropriate approach would be to use all 6 samples, for time consideration we will be using just the first one, i.e. ERR458493.qc.fq.gz</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">normalize</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">median</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">ksize</span> <span class="mi">20</span> <span class="o">--</span><span class="n">cutoff</span> <span class="mi">20</span> <span class="o">-</span><span class="n">M</span> <span class="mi">10</span><span class="n">G</span> <span class="o">--</span><span class="n">savegraph</span> <span class="n">normC20k20</span><span class="o">.</span><span class="n">ct</span> <span class="o">--</span><span class="n">force_single</span> <span class="n">ERR458493</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>This tools works mainly for paired-end reads, combined with a one file containing single-end reads. Given that all our samples are single end, we’ll use the <code class="docutils literal notranslate"><span class="pre">--force_single</span></code> flag to force all reads to be considered as single-end. The parameter <code class="docutils literal notranslate"><span class="pre">--cutoff</span></code> indicates that when the median k-mer coverage level is above this number the read is not kept. Also note the <code class="docutils literal notranslate"><span class="pre">-M</span></code> parameter. This specifies how much memory diginorm should use, and should be less than the total memory on the computer you’re using. (See <a class="reference external" href="http://khmer.readthedocs.io/en/v2.1.1/user/choosing-table-sizes.html">choosing hash sizes for khmer for more information</a>.</p>
+<p>(This step should take about 2-3 minutes to complete)</p>
+</div>
+<div class="section" id="trim-off-likely-erroneous-k-mers">
+<span id="trim-off-likely-erroneous-k-mers"></span><h2>7.5. Trim off likely erroneous k-mers<a class="headerlink" href="#trim-off-likely-erroneous-k-mers" title="Permalink to this headline">¶</a></h2>
+<p>Now, run through all the reads and trim off low-abundance parts of high-coverage reads</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">filter</span><span class="o">-</span><span class="n">abund</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">threads</span> <span class="mi">4</span> <span class="o">--</span><span class="n">variable</span><span class="o">-</span><span class="n">coverage</span> <span class="o">--</span><span class="n">normalize</span><span class="o">-</span><span class="n">to</span> <span class="mi">18</span> <span class="n">normC20k20</span><span class="o">.</span><span class="n">ct</span> <span class="o">*.</span><span class="n">keep</span>
+</pre></div>
+</div>
+<p>The parameter <code class="docutils literal notranslate"><span class="pre">--variable-coverage</span></code> requests that only trim low-abundance k-mers from sequences that have high coverage. The parameter <code class="docutils literal notranslate"><span class="pre">--normalize-to</span></code> bases the variable-coverage cutoff on this median k-mer abundance.</p>
+<p>(This step should take about 2-3 minutes to complete)</p>
+<div class="section" id="run-the-assembler">
+<span id="run-the-assembler"></span><h3>7.5.1. Run the assembler<a class="headerlink" href="#run-the-assembler" title="Permalink to this headline">¶</a></h3>
+<p>Trinity works both with paired-end reads as well as single-end reads (including simultaneously both types at the same time). In the general case, the paired-end files are defined as <code class="docutils literal notranslate"><span class="pre">--left</span> <span class="pre">left.fq</span></code> and <code class="docutils literal notranslate"><span class="pre">--right</span> <span class="pre">right.fq</span></code> respectively. The single-end reads (a.k.a <em>orphans</em>) are defined by the flag <code class="docutils literal notranslate"><span class="pre">--single</span></code>.</p>
+<p>First of all though, we need to make sure that there are no whitespaces in the header of the input fastq file. This is done using the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">ERR458493</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span><span class="o">.</span><span class="n">keep</span><span class="o">.</span><span class="n">abundfilt</span> <span class="o">|</span> <span class="n">tr</span> <span class="o">-</span><span class="n">d</span> <span class="s1">&#39; &#39;</span> <span class="o">&gt;</span> <span class="n">ERR458493</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span><span class="o">.</span><span class="n">keep</span><span class="o">.</span><span class="n">abundfilt</span><span class="o">.</span><span class="n">clean</span>
+</pre></div>
+</div>
+<p>So let’s run the assembler as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="n">Trinity</span> <span class="o">--</span><span class="n">seqType</span> <span class="n">fq</span> <span class="o">--</span><span class="n">max_memory</span> <span class="mi">10</span><span class="n">G</span> <span class="o">--</span><span class="n">CPU</span> <span class="mi">4</span> <span class="o">--</span><span class="n">single</span> <span class="n">ERR458493</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">fq</span><span class="o">.</span><span class="n">gz</span><span class="o">.</span><span class="n">keep</span><span class="o">.</span><span class="n">abundfilt</span><span class="o">.</span><span class="n">clean</span> <span class="o">--</span><span class="n">output</span> <span class="n">yeast_trinity</span>
+</pre></div>
+</div>
+<p>(This will take about 20 minutes)</p>
+<p>You should see something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">**</span> <span class="n">Harvesting</span> <span class="nb">all</span> <span class="n">assembled</span> <span class="n">transcripts</span> <span class="n">into</span> <span class="n">a</span> <span class="n">single</span> <span class="n">multi</span><span class="o">-</span><span class="n">fasta</span> <span class="n">file</span><span class="o">...</span>
+
+<span class="n">Saturday</span><span class="p">,</span> <span class="n">June</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2018</span><span class="p">:</span> <span class="mi">16</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">08</span>       <span class="n">CMD</span><span class="p">:</span> <span class="n">find</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">read_partitions</span><span class="o">/</span> <span class="o">-</span><span class="n">name</span> <span class="s1">&#39;*inity.fasta&#39;</span>  <span class="o">|</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">trinity</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span><span class="o">/</span><span class="n">util</span><span class="o">/</span><span class="n">support_scripts</span> <span class="o">/</span><span class="n">partitioned_trinity_aggregator</span><span class="o">.</span><span class="n">pl</span> <span class="n">TRINITY_DN</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">tmp</span> 
+<span class="o">-</span><span class="n">relocating</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">tmp</span> <span class="n">to</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span>
+<span class="n">Saturday</span><span class="p">,</span> <span class="n">June</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2018</span><span class="p">:</span> <span class="mi">16</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">08</span>       <span class="n">CMD</span><span class="p">:</span> <span class="n">mv</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">tmp</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span>
+
+<span class="c1">###################################################################</span>
+<span class="n">Trinity</span> <span class="n">assemblies</span> <span class="n">are</span> <span class="n">written</span> <span class="n">to</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span>
+<span class="c1">###################################################################</span>
+
+<span class="n">Saturday</span><span class="p">,</span> <span class="n">June</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">2018</span><span class="p">:</span> <span class="mi">16</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">08</span>       <span class="n">CMD</span><span class="p">:</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">miniconda</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">trinity</span><span class="o">-</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">6</span><span class="o">/</span><span class="n">util</span><span class="o">/</span><span class="n">support_scripts</span><span class="o">/</span><span class="n">get_Trinity_gene_to_trans_map</span><span class="o">.</span><span class="n">pl</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">tx160085</span><span class="o">/</span><span class="n">assembly</span><span class="o">/</span><span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gene_trans_map</span>
+</pre></div>
+</div>
+<p>at the end.</p>
+</div>
+<div class="section" id="looking-at-the-assembly">
+<span id="looking-at-the-assembly"></span><h3>7.5.2. Looking at the assembly<a class="headerlink" href="#looking-at-the-assembly" title="Permalink to this headline">¶</a></h3>
+<p>First, save the assembly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="n">yeast_trinity</span><span class="o">/</span><span class="n">Trinity</span><span class="o">.</span><span class="n">fasta</span> <span class="n">yeast</span><span class="o">-</span><span class="n">transcriptome</span><span class="o">-</span><span class="n">assembly</span><span class="o">.</span><span class="n">fa</span>
+</pre></div>
+</div>
+<p>Now, look at the beginning:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">head</span> <span class="n">yeast</span><span class="o">-</span><span class="n">transcriptome</span><span class="o">-</span><span class="n">assembly</span><span class="o">.</span><span class="n">fa</span>
+</pre></div>
+</div>
+<p>It’s RNA! Yay!</p>
+<p>Let’s capture also some statistics of the Trinity assembly. Trinity provides a handy tool to do exactly that:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TrinityStats</span><span class="o">.</span><span class="n">pl</span> <span class="n">yeast</span><span class="o">-</span><span class="n">transcriptome</span><span class="o">-</span><span class="n">assembly</span><span class="o">.</span><span class="n">fa</span>
+</pre></div>
+</div>
+<p>The output should look something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">################################</span>
+<span class="c1">## Counts of transcripts, etc.</span>
+<span class="c1">################################</span>
+<span class="n">Total</span> <span class="n">trinity</span> <span class="s1">&#39;genes&#39;</span><span class="p">:</span>  <span class="mi">3305</span>
+<span class="n">Total</span> <span class="n">trinity</span> <span class="n">transcripts</span><span class="p">:</span>      <span class="mi">3322</span>
+<span class="n">Percent</span> <span class="n">GC</span><span class="p">:</span> <span class="mf">42.05</span>
+
+<span class="c1">########################################</span>
+<span class="n">Stats</span> <span class="n">based</span> <span class="n">on</span> <span class="n">ALL</span> <span class="n">transcript</span> <span class="n">contigs</span><span class="p">:</span>
+<span class="c1">########################################</span>
+
+        <span class="n">Contig</span> <span class="n">N10</span><span class="p">:</span> <span class="mi">1355</span>
+        <span class="n">Contig</span> <span class="n">N20</span><span class="p">:</span> <span class="mi">1016</span>
+        <span class="n">Contig</span> <span class="n">N30</span><span class="p">:</span> <span class="mi">781</span>
+        <span class="n">Contig</span> <span class="n">N40</span><span class="p">:</span> <span class="mi">617</span>
+        <span class="n">Contig</span> <span class="n">N50</span><span class="p">:</span> <span class="mi">502</span>
+
+        <span class="n">Median</span> <span class="n">contig</span> <span class="n">length</span><span class="p">:</span> <span class="mi">319</span>
+        <span class="n">Average</span> <span class="n">contig</span><span class="p">:</span> <span class="mf">441.65</span>
+        <span class="n">Total</span> <span class="n">assembled</span> <span class="n">bases</span><span class="p">:</span> <span class="mi">1467173</span>
+
+<span class="c1">#####################################################</span>
+<span class="c1">## Stats based on ONLY LONGEST ISOFORM per &#39;GENE&#39;:</span>
+<span class="c1">#####################################################</span>
+
+        <span class="n">Contig</span> <span class="n">N10</span><span class="p">:</span> <span class="mi">1358</span>
+        <span class="n">Contig</span> <span class="n">N20</span><span class="p">:</span> <span class="mi">1016</span>
+        <span class="n">Contig</span> <span class="n">N30</span><span class="p">:</span> <span class="mi">781</span>
+        <span class="n">Contig</span> <span class="n">N40</span><span class="p">:</span> <span class="mi">617</span>
+        <span class="n">Contig</span> <span class="n">N50</span><span class="p">:</span> <span class="mi">500</span>
+
+        <span class="n">Median</span> <span class="n">contig</span> <span class="n">length</span><span class="p">:</span> <span class="mi">319</span>
+        <span class="n">Average</span> <span class="n">contig</span><span class="p">:</span> <span class="mf">440.93</span>
+        <span class="n">Total</span> <span class="n">assembled</span> <span class="n">bases</span><span class="p">:</span> <span class="mi">1457279</span>
+</pre></div>
+</div>
+<p>This is a set of summary stats about your assembly. Are they good? Bad? How would you know?</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="quality-trimming.html" title="previous chapter (use the left arrow)">6. Short read quality and trimming</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="rnaseq-quant.html" title="next chapter (use the right arrow)">8. RNAseq</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="rnaseq-quant.html" title="8. RNAseq"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="quality-trimming.html" title="6. Short read quality and trimming"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Elias Oziolor. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

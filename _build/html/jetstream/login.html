@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="../_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>4. Logging in to jetstream from your local terminal with a key file &#8212; 2018-setacna-rnaseq 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5. Jetstream: install bioconda on a blank Linux machine." href="../jetstream-bioconda-config.html" />
+    <link rel="prev" title="3. Booting a Jetstream Computer Instance for your use!" href="boot.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../jetstream-bioconda-config.html" title="5. Jetstream: install bioconda on a blank Linux machine."
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="boot.html" title="3. Booting a Jetstream Computer Instance for your use!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">4. Logging in to jetstream from your local terminal with a key file</a><ul>
+<li><a class="reference internal" href="#concerning-keys">4.1. Concerning Keys</a></li>
+<li><a class="reference internal" href="#getting-the-private-key">4.2. Getting the Private Key</a></li>
+<li><a class="reference internal" href="#getting-your-instance-ip-address">4.3. Getting your instance IP address</a></li>
+<li><a class="reference internal" href="#on-macos-linux">4.4. On MacOS/Linux</a></li>
+<li><a class="reference internal" href="#on-windows">4.5. On Windows</a><ul>
+<li><a class="reference internal" href="#install-mobaxterm">4.5.1. Install mobaxterm</a></li>
+<li><a class="reference internal" href="#start-a-new-session">4.5.2. Start a new session</a></li>
+<li><a class="reference internal" href="#fill-in-session-settings">4.5.3. Fill in session settings</a></li>
+<li><a class="reference internal" href="#specify-the-session-key">4.5.4. Specify the session key</a></li>
+<li><a class="reference internal" href="#click-ok">4.5.5. Click OK</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="boot.html"
+                        title="previous chapter">3. Booting a Jetstream Computer Instance for your use!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../jetstream-bioconda-config.html"
+                        title="next chapter">5. Jetstream: install bioconda on a blank Linux machine.</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/jetstream/login.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="../search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="../toc.html">Docs</a></li>
+              
+              <li>4. Logging in to jetstream from your local terminal with a key file</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="logging-in-to-jetstream-from-your-local-terminal-with-a-key-file">
+<span id="logging-in-to-jetstream-from-your-local-terminal-with-a-key-file"></span><h1>4. Logging in to jetstream from your local terminal with a key file<a class="headerlink" href="#logging-in-to-jetstream-from-your-local-terminal-with-a-key-file" title="Permalink to this headline">¶</a></h1>
+<p>Some of us have had problems with the web shell and getting into the Jetstream
+portal. These materials will show you how to log in using an SSH key through your
+local terminal.</p>
+<div class="section" id="concerning-keys">
+<span id="concerning-keys"></span><h2>4.1. Concerning Keys<a class="headerlink" href="#concerning-keys" title="Permalink to this headline">¶</a></h2>
+<p>Cryptographic keys are a convenient and secure way to authenticate without having to use
+passwords. They consist of a pair of files called the public and private keys: the public part can
+be shared with whoever you’d like to authenticate with (in our case, Jetstream!), and the private
+part is kept “secret” on your machine. Things that are encrypted with the public key can be be
+decrypted with the private key, but it is computationally intractable (ie, it would take on the
+order of thousands of years) to determine a private key from a public key. You can read more about
+it <a class="reference external" href="https://en.wikipedia.org/wiki/Public-key_cryptography">here</a>.</p>
+<p>The good news is that there is already a registered public key for our Jetstream account. However,
+to make use of it, you’ll need the private key. And so, we move on!</p>
+</div>
+<div class="section" id="getting-the-private-key">
+<span id="getting-the-private-key"></span><h2>4.2. Getting the Private Key<a class="headerlink" href="#getting-the-private-key" title="Permalink to this headline">¶</a></h2>
+<p>The private key has been posted on slack in the <code class="docutils literal notranslate"><span class="pre">#general</span></code> channel. You can download it by
+visiting <a class="reference external" href="https://dibsi2018.slack.com/files/UBHJK59T9/FBHQP0KRB/angus_private_key">here</a>, selecting
+<strong>Actions</strong>, and pressing download.</p>
+</div>
+<div class="section" id="getting-your-instance-ip-address">
+<span id="getting-your-instance-ip-address"></span><h2>4.3. Getting your instance IP address<a class="headerlink" href="#getting-your-instance-ip-address" title="Permalink to this headline">¶</a></h2>
+<p>In order to connect to your instance, we need to know its IP address, its unique identifier on the
+internet. This is listed in your instance details, circled below:</p>
+<p><a class="reference external" href="../_images/ip-address.png"><img alt="stuff" src="../_images/ip-address.png" /></a></p>
+<p>Now, things diverge a little.</p>
+</div>
+<div class="section" id="on-macos-linux">
+<span id="on-macos-linux"></span><h2>4.4. On MacOS/Linux<a class="headerlink" href="#on-macos-linux" title="Permalink to this headline">¶</a></h2>
+<p>These systems have their own terminal by default. Find and open your terminal: on MacOS, you can
+search for Terminal in finder.</p>
+<p>We’re going to assume that the key file ended up in your <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> folder. In your terminal,
+run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="o">&amp;&amp;</span> mv ~/Downloads/angus_private_key .
+</pre></div>
+</div>
+<p>This puts you and the file in your home folder. Now, we need to set its permissions more strictly:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod <span class="m">600</span> angus_private_key
+</pre></div>
+</div>
+<p>Finally, we can use the IP address from before, along with the common login name and the key, to log
+in we need to use the <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command, provide the key file with the <code class="docutils literal notranslate"><span class="pre">-i</span></code> flag, and then our class name (login ID) and the IP address we got above for our instance. This will look something like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -i angus_private_key YOUR_CLASS_NAME@YOUR_IP_ADDRESS
+
+The authenticity of host &#39;YOUR_IP_ADDRESS (YOUR_IP_ADDRESS)&#39; can&#39;t be established.
+ECDSA key fingerprint is SHA256:jPDtbjMUp9c7FWAvaLLwR9vWVNTOyqikzcE3m0hglG0.
+Are you sure you want to continue connecting (yes/no)? yes
+</pre></div>
+</div>
+<p>You should now have access to atmosphere within your local terminal.</p>
+</div>
+<div class="section" id="on-windows">
+<span id="on-windows"></span><h2>4.5. On Windows<a class="headerlink" href="#on-windows" title="Permalink to this headline">¶</a></h2>
+<p>For Windows, we first need to actually <em>install</em> a terminal.</p>
+<div class="section" id="install-mobaxterm">
+<span id="install-mobaxterm"></span><h3>4.5.1. Install mobaxterm<a class="headerlink" href="#install-mobaxterm" title="Permalink to this headline">¶</a></h3>
+<p>First, download <a class="reference external" href="http://mobaxterm.mobatek.net/download-home-edition.html">mobaxterm home edition (portable)</a>
+and run it.</p>
+</div>
+<div class="section" id="start-a-new-session">
+<span id="start-a-new-session"></span><h3>4.5.2. Start a new session<a class="headerlink" href="#start-a-new-session" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../_images/moba-1.png"><img alt="foo" src="../_images/moba-1.png" /></a></p>
+</div>
+<div class="section" id="fill-in-session-settings">
+<span id="fill-in-session-settings"></span><h3>4.5.3. Fill in session settings<a class="headerlink" href="#fill-in-session-settings" title="Permalink to this headline">¶</a></h3>
+<p>Fill in your “remote host,” which will be the IP address from earlier. Then select
+“specify username” and enter your class group name (e.g. dibbears).</p>
+<p><a class="reference external" href="../_images/ec2-moba-2.png"><img alt="foo" src="../_images/ec2-moba-2.png" /></a></p>
+</div>
+<div class="section" id="specify-the-session-key">
+<span id="specify-the-session-key"></span><h3>4.5.4. Specify the session key<a class="headerlink" href="#specify-the-session-key" title="Permalink to this headline">¶</a></h3>
+<p>Copy the downloaded private file onto your primary hard disk (generally
+C:) and the put in the full path to it.</p>
+<p><a class="reference external" href="../_images/ec2-moba-3.png"><img alt="foo" src="../_images/ec2-moba-3.png" /></a></p>
+</div>
+<div class="section" id="click-ok">
+<span id="click-ok"></span><h3>4.5.5. Click OK<a class="headerlink" href="#click-ok" title="Permalink to this headline">¶</a></h3>
+<p>Victory!</p>
+<p><a class="reference external" href="../_images/ec2-moba-4.png"><img alt="foo" src="../_images/ec2-moba-4.png" /></a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="boot.html" title="previous chapter (use the left arrow)">3. Booting a Jetstream Computer Instance for your use!</a>
+      </div>
+    
+      <div class="pull-right">
+        <a class="btn btn-default" href="../jetstream-bioconda-config.html" title="next chapter (use the right arrow)">5. Jetstream: install bioconda on a blank Linux machine.</a>
+      </div>
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../jetstream-bioconda-config.html" title="5. Jetstream: install bioconda on a blank Linux machine."
+             >next</a> |</li>
+        <li class="right" >
+          <a href="boot.html" title="3. Booting a Jetstream Computer Instance for your use!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="../_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Elias Oziolor. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>

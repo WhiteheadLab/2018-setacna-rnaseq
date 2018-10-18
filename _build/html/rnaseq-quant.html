@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+  <!-- Licensed under the Apache 2.0 License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/open-sans/stylesheet.css" />
+  <!-- Licensed under the SIL Open Font License -->
+  <link rel="stylesheet" type="text/css" href="_static/fonts/source-serif-pro/source-serif-pro.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="_static/css/bootstrap-theme.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>8. RNAseq &#8212; 2018-setacna-rnaseq 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="7. Transcriptome assembly - some basics" href="transcriptome-assembly.html" />
+  
+   
+
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="transcriptome-assembly.html" title="7. Transcriptome assembly - some basics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="container-wrapper">
+
+      <div id="mobile-toggle">
+        <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+      </div>
+  <div id="left-column">
+    <div class="sphinxsidebar">
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h2>Contents</h2>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">8. RNAseq</a><ul>
+<li><a class="reference internal" href="#boot-up-a-jetstream">8.1. Boot up a Jetstream</a></li>
+<li><a class="reference internal" href="#install-software">8.2. Install software</a></li>
+<li><a class="reference internal" href="#make-a-new-working-directory-and-link-the-original-data">8.3. Make a new working directory and link the original data</a></li>
+<li><a class="reference internal" href="#download-the-yeast-reference-transcriptome">8.4. Download the yeast reference transcriptome:</a></li>
+<li><a class="reference internal" href="#index-the-yeast-transcriptome">8.5. Index the yeast transcriptome:</a></li>
+<li><a class="reference internal" href="#run-salmon-on-all-the-samples">8.6. Run salmon on all the samples:</a></li>
+<li><a class="reference internal" href="#collect-all-of-the-sample-counts-using-this-python-script">8.7. Collect all of the sample counts using this Python script:</a></li>
+<li><a class="reference internal" href="#run-edger-in-r-using-this-script-and-take-a-look-at-the-output">8.8. Run edgeR (in R) using this script and take a look at the output:</a></li>
+<li><a class="reference internal" href="#questions-to-ask-address">8.9. Questions to ask/address</a></li>
+<li><a class="reference internal" href="#more-reading">8.10. More reading</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="transcriptome-assembly.html"
+                        title="previous chapter">7. Transcriptome assembly - some basics</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/rnaseq-quant.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <div id="main-search">
+      <form class="form-inline" action="search.html" method="GET" role="form">
+        <div class="input-group">
+          <input name="q" type="text" class="form-control" placeholder="Search...">
+        </div>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+      </form>
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+        <div id="right-column">
+          
+          <div role="navigation" aria-label="breadcrumbs navigation">
+            <ol class="breadcrumb">
+              <li><a href="toc.html">Docs</a></li>
+              
+              <li>8. RNAseq</li>
+            </ol>
+          </div>
+          
+          <div class="document clearer body">
+            
+  <div class="section" id="rnaseq">
+<span id="rnaseq"></span><h1>8. RNAseq<a class="headerlink" href="#rnaseq" title="Permalink to this headline">¶</a></h1>
+<p>Learning objectives:</p>
+<ul class="simple">
+<li>Install rna-seq software (salmon and edgeR) using conda</li>
+<li>Learn mapping and differential gene expression analysis of rna-seq data</li>
+<li>Interpret rna-seq analysis results</li>
+</ul>
+<div class="section" id="boot-up-a-jetstream">
+<span id="boot-up-a-jetstream"></span><h2>8.1. Boot up a Jetstream<a class="headerlink" href="#boot-up-a-jetstream" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="jetstream/boot.md">Boot an m1.medium Jetstream instance</a> and log in.</p>
+</div>
+<div class="section" id="install-software">
+<span id="install-software"></span><h2>8.2. Install software<a class="headerlink" href="#install-software" title="Permalink to this headline">¶</a></h2>
+<p>We will be using salmon and edgeR. Salmon is installed through conda, but edgeR will require an additional script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">~</span>
+
+<span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">salmon</span>
+
+<span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ngs</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">angus</span><span class="o">/</span><span class="mi">2018</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">install</span><span class="o">-</span><span class="n">edgeR</span><span class="o">.</span><span class="n">R</span>
+<span class="n">sudo</span> <span class="n">Rscript</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">save</span> <span class="n">install</span><span class="o">-</span><span class="n">edgeR</span><span class="o">.</span><span class="n">R</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="make-a-new-working-directory-and-link-the-original-data">
+<span id="make-a-new-working-directory-and-link-the-original-data"></span><h2>8.3. Make a new working directory and link the original data<a class="headerlink" href="#make-a-new-working-directory-and-link-the-original-data" title="Permalink to this headline">¶</a></h2>
+<p>We will be using the same data as before (<a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/">Schurch et al, 2016</a>), so the following commands will create a new folder <code class="docutils literal notranslate"><span class="pre">rnaseq</span></code> and link the data in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="n">rnaseq</span>
+<span class="n">cd</span> <span class="n">rnaseq</span>
+
+<span class="n">ln</span> <span class="o">-</span><span class="n">fs</span> <span class="o">~/</span><span class="n">data</span><span class="o">/*.</span><span class="n">fastq</span><span class="o">.</span><span class="n">gz</span> <span class="o">.</span>
+<span class="n">ls</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="download-the-yeast-reference-transcriptome">
+<span id="download-the-yeast-reference-transcriptome"></span><h2>8.4. Download the yeast reference transcriptome:<a class="headerlink" href="#download-the-yeast-reference-transcriptome" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">downloads</span><span class="o">.</span><span class="n">yeastgenome</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">sequence</span><span class="o">/</span><span class="n">S288C_reference</span><span class="o">/</span><span class="n">orf_dna</span><span class="o">/</span><span class="n">orf_coding</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="index-the-yeast-transcriptome">
+<span id="index-the-yeast-transcriptome"></span><h2>8.5. Index the yeast transcriptome:<a class="headerlink" href="#index-the-yeast-transcriptome" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">salmon</span> <span class="n">index</span> <span class="o">--</span><span class="n">index</span> <span class="n">yeast_orfs</span> <span class="o">--</span><span class="nb">type</span> <span class="n">quasi</span> <span class="o">--</span><span class="n">transcripts</span> <span class="n">orf_coding</span><span class="o">.</span><span class="n">fasta</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-salmon-on-all-the-samples">
+<span id="run-salmon-on-all-the-samples"></span><h2>8.6. Run salmon on all the samples:<a class="headerlink" href="#run-salmon-on-all-the-samples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for i in *.fastq.gz
+do
+   salmon quant -i yeast_orfs --libType U -r $i -o $i.quant --seqBias --gcBias
+done
+</pre></div>
+</div>
+<p>Read up on <a class="reference external" href="https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype">libtype, here</a>.</p>
+</div>
+<div class="section" id="collect-all-of-the-sample-counts-using-this-python-script">
+<span id="collect-all-of-the-sample-counts-using-this-python-script"></span><h2>8.7. Collect all of the sample counts using <a class="reference external" href="https://raw.githubusercontent.com/ngs-docs/angus/2018/scripts/gather-counts.py">this Python script</a>:<a class="headerlink" href="#collect-all-of-the-sample-counts-using-this-python-script" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ngs</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="mi">2018</span><span class="o">-</span><span class="n">ggg201b</span><span class="o">/</span><span class="n">master</span><span class="o">/</span><span class="n">lab6</span><span class="o">-</span><span class="n">rnaseq</span><span class="o">/</span><span class="n">gather</span><span class="o">-</span><span class="n">counts</span><span class="o">.</span><span class="n">py</span>
+<span class="n">python2</span> <span class="n">gather</span><span class="o">-</span><span class="n">counts</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-edger-in-r-using-this-script-and-take-a-look-at-the-output">
+<span id="run-edger-in-r-using-this-script-and-take-a-look-at-the-output"></span><h2>8.8. Run edgeR (in R) using <a class="reference external" href="https://raw.githubusercontent.com/ngs-docs/angus/2018/scripts/yeast.salmon.R">this script</a> and take a look at the output:<a class="headerlink" href="#run-edger-in-r-using-this-script-and-take-a-look-at-the-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="n">O</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">raw</span><span class="o">.</span><span class="n">githubusercontent</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ngs</span><span class="o">-</span><span class="n">docs</span><span class="o">/</span><span class="n">angus</span><span class="o">/</span><span class="mi">2018</span><span class="o">/</span><span class="n">scripts</span><span class="o">/</span><span class="n">yeast</span><span class="o">.</span><span class="n">salmon</span><span class="o">.</span><span class="n">R</span>
+<span class="n">Rscript</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">save</span> <span class="n">yeast</span><span class="o">.</span><span class="n">salmon</span><span class="o">.</span><span class="n">R</span>
+</pre></div>
+</div>
+<p>This will produce two plots, <code class="docutils literal notranslate"><span class="pre">yeast-edgeR-MA-plot.pdf</span></code> and
+<code class="docutils literal notranslate"><span class="pre">yeast-edgeR-MDS.pdf</span></code>. You can view them by going to your RStudio server file viewer, changing to  the directory <code class="docutils literal notranslate"><span class="pre">rnaseq</span></code>, and then clicking on them. If you see an error “Popup Blocked”, then click the “Try again” button</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">yeast-edgeR.csv</span></code> file contains the fold expression &amp; significance information in a spreadsheet.</p>
+</div>
+<div class="section" id="questions-to-ask-address">
+<span id="questions-to-ask-address"></span><h2>8.9. Questions to ask/address<a class="headerlink" href="#questions-to-ask-address" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p class="first">What is the point or value of the <a class="reference external" href="https://en.wikipedia.org/wiki/Multidimensional_scaling">multidimensional scaling (MDS)</a> plot?</p>
+</li>
+<li><p class="first">Why does the MA-plot have that shape?</p>
+<p>Related: Why can’t we just use fold expression to select the things we’re interested in?</p>
+<p>Related: How do we pick the FDR (false discovery rate) threshold?</p>
+</li>
+<li><p class="first">How do we know how many replicates (bio and/or technical) to do?</p>
+<p>Related: what confounding factors are there for RNAseq analysis?</p>
+<p>Related: what is our false positive/false negative rate?</p>
+</li>
+<li><p class="first">What happens when you add new replicates?</p>
+</li>
+</ol>
+</div>
+<div class="section" id="more-reading">
+<span id="more-reading"></span><h2>8.10. More reading<a class="headerlink" href="#more-reading" title="Permalink to this headline">¶</a></h2>
+<p>“How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?” <a class="reference external" href="http://rnajournal.cshlp.org/content/22/6/839">Schurch et al., 2016</a>.</p>
+<p>“Salmon provides accurate, fast, and bias-aware transcript expression estimates using dual-phase inference” <a class="reference external" href="http://biorxiv.org/content/early/2016/08/30/021592">Patro et al., 2016</a>.</p>
+<p>Also see <a class="reference external" href="http://seqanswers.com/">seqanswers</a> and <a class="reference external" href="https://www.biostars.org/">biostars</a>.</p>
+</div>
+</div>
+
+
+          </div>
+            
+  <div class="footer-relations">
+    
+      <div class="pull-left">
+        <a class="btn btn-default" href="transcriptome-assembly.html" title="previous chapter (use the left arrow)">7. Transcriptome assembly - some basics</a>
+      </div>
+    
+    </div>
+    <div class="clearer"></div>
+  
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="transcriptome-assembly.html" title="7. Transcriptome assembly - some basics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="toc.html">2018-setacna-rnaseq 0.0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+<script type="text/javascript">
+  $("#mobile-toggle a").click(function () {
+    $("#left-column").toggle();
+  });
+</script>
+<script type="text/javascript" src="_static/js/bootstrap.js"></script>
+  <div class="footer">
+    &copy; Copyright 2018, Elias Oziolor. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+  </body>
+</html>
