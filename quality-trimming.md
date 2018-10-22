@@ -12,34 +12,6 @@ something like this
 titus@js-17-71:~$ 
 ```
 
-## Installing some software
-
-Run this:
-
-```
-sudo apt-get -y update && \
-sudo apt-get -y install trimmomatic fastqc python-pip \
-   samtools zlib1g-dev ncurses-dev python-dev 
-```
-Then run this to install multiqc:
-
-```
-virtualenv ~/bin/MultiQC-1.2
-source ~/bin/MultiQC-1.2/bin/activate
-pip install networkx==1.11
-pip install multiqc==1.2
-deactivate
-```
-
-`apt-get install` doesn't work properly for `fastqc`. So we will update the default `fastqc` version using the following commands
-
-```
-cd ~/
-wget https://launchpad.net/ubuntu/+archive/primary/+files/fastqc_0.11.5+dfsg-3_all.deb && \
-sudo dpkg -i fastqc_0.11.5+dfsg-3_all.deb && \
-sudo apt-get install -f
-```
-
 ## Data source
 
 We will be using mRNAseq reads from a small subset of data from [Nematostella vectensis](https://en.wikipedia.org/wiki/Starlet_sea_anemone) [(Tulin et al., 2013)](https://evodevojournal.biomedcentral.com/articles/10.1186/2041-9139-4-16). 
