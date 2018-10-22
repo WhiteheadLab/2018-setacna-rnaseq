@@ -41,20 +41,20 @@ We're going to assume that the key file ended up in your `Downloads` folder. In 
 run:
 
 ```bash
-cd && mv ~/Downloads/angus_private_key .
+cd && mv ~/Downloads/setac_private_key .
 ```
 
 This puts you and the file in your home folder. Now, we need to set its permissions more strictly:
 
 ```bash
-chmod 600 angus_private_key
+chmod 600 setac_private_key
 ```
 
 Finally, we can use the IP address from before, along with the common login name and the key, to log
 in we need to use the `ssh` command, provide the key file with the `-i` flag, and then our class name (login ID) and the IP address we got above for our instance. This will look something like this:
 
 ```bash
-ssh -i angus_private_key YOUR_CLASS_NAME@YOUR_IP_ADDRESS
+ssh -i setac_private_key YOUR_CLASS_NAME@YOUR_IP_ADDRESS
 
 The authenticity of host 'YOUR_IP_ADDRESS (YOUR_IP_ADDRESS)' can't be established.
 ECDSA key fingerprint is SHA256:jPDtbjMUp9c7FWAvaLLwR9vWVNTOyqikzcE3m0hglG0.
