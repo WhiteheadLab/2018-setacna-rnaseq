@@ -1,4 +1,4 @@
-# Jetstream: install bioconda on a blank Linux machine.
+# Jetstream: working with bioconda.
 
 Learning objections:
 * learn what bioconda is
