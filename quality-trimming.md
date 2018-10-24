@@ -255,7 +255,7 @@ in ``orphans.qc.fq.gz``.
 Make these trimmed reads read-only and keep them, as we will reuse them later.
 
 ```
-chmod a-w ${PROJECT}/quality/*.qc.fq.gz
+chmod a-w ${PROJECT}/trim/*.qc.fq.gz
 ```
 
 Questions:
