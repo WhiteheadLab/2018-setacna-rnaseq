@@ -72,18 +72,16 @@ Oct 15st, 2018 by ljcohen. This images is based on Ubuntu 18.04 devel and docker
 
 Here, "image" refers to the resources that are pre-loaded into your computing workspace on your instance. Think of it like apps that come with your phone before you add new ones on your own. Loading this image built before the workshop prevents us from having to choose our operating distrubution and download frequently-used packages on our own, and makes sure that everyone at the workshop has the same basic computing environment. That ensures that the commands we tell you to use will work, and makes it easier for TAs to figure out what's wrong if you run into error messages.
 
-![foo](images/Image_Search.thumb.png)
+![foo](https://i.imgur.com/WPhJ6Vx.png)
            
-Launch 
-
-![foo](images/DIBSI2018_launch.thumb.png)
+Launch
 
 ## Name it something simple
 
 Change the name after what we're doing - "RNAseq SETAC", for example,
 but it doesn't matter. Pull down the drop-down menu under 'Project' to select your name. Then make sure the appropriate Resources are selected. You probably won't have to change these. The 'Allocation Source' will already be selected. (This is our XSEDE allocation grant ID.) Choose the 'm1.large' instance size. This is the minimum instance size. A larger instance can be selected, depending on what we will be doing. The 'Provider' will be randomly chosen as either 'Jetstream - Indiana University' or 'Jetstream - TACC'.
 
-![foo](images/Launch_Instance.thumb.png)
+![foo](https://i.imgur.com/W2oi7iv.png)
 
 ## Wait for it to become active
 
