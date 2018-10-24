@@ -165,6 +165,32 @@ Links:
 There are several caveats about FastQC - the main one is that it only calculates certain statistics (like duplicated sequences) for subsets
 of the data (e.g. duplicate sequences are only analyzed for the first 100,000 sequences in each file.
 
+### MultiQC
+
+
+If you would like to aggregate all of your fastqc reports across many samples, [MultiQC](http://multiqc.info/) will do this into a single report for easy comparison.
+
+Run MultiQC:
+
+```
+multiqc .
+```
+
+The terminal output should look like this:
+
+```
+[INFO   ]         multiqc : This is MultiQC v1.6
+[INFO   ]         multiqc : Template    : default
+[INFO   ]         multiqc : Searching '.'
+[INFO   ]          fastqc : Found 20 reports
+[INFO   ]         multiqc : Compressing plot data
+[INFO   ]         multiqc : Report      : multiqc_report.html
+[INFO   ]         multiqc : Data        : multiqc_data
+[INFO   ]         multiqc : MultiQC complete
+```
+
+You can also view this output [here](_static/multiqc_report.html)
+
 #### View your files on your own computer
 As an alternative to viewing the files on the Rstudio server, we can secure copy (scp) these files to our own laptops, and view them from there.
 ```
@@ -258,32 +284,3 @@ Questions:
 
 * is the quality trimmed data "better" than before?
 * Does it matter that you still have adapters!?
-
-#### MultiQC
-
-If you would like to aggregate all of your fastqc reports across many samples, [MultiQC](http://multiqc.info/) will do this into a single report for easy comparison.
-
-Run MultiQC:
-
-```
-source ~/bin/MultiQC-1.2/bin/activate
-cd ${PROJECT}/quality
-multiqc .
-```
-
-And now you should see output that looks like this:
- 
- ```
- [INFO   ]         multiqc : This is MultiQC v1.0
- [INFO   ]         multiqc : Template    : default
- [INFO   ]         multiqc : Searching '.'
- Searching 15 files..  [####################################]  100%
- [INFO   ]          fastqc : Found 4 reports
- [INFO   ]         multiqc : Compressing plot data
- [INFO   ]         multiqc : Report      : multiqc_report.html
- [INFO   ]         multiqc : Data        : multiqc_data
- [INFO   ]         multiqc : MultiQC complete
-```
-
-
-You can also view this output [here](_static/multiqc_report.html)
