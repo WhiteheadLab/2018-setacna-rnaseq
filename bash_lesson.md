@@ -1,7 +1,3 @@
-SETAC-NA Bash lesson
-===
-###### tags: `workshop`
-
 Using the command line
 ===
 
@@ -136,7 +132,7 @@ Biggest advantage of using command line is that you know exactly what you are do
 
 Another big advantage of unix is that it uses __pipes__ (|). Basically that is the way for unix to rush the output from one command into another, so that you don't have to save any intermediates. We will chat more about this later, but overall that simplifies analyses __immensely__.
 
-# Navigating Files and Directories
+## Navigating Files and Directories
 
 When you open the terminal you are immediately placed in a location on your computer. You can find where you are by running the command pwd (print working directory).
 
@@ -179,7 +175,7 @@ campus-009-192:~ eoziolor$ pwd
 campus-009-192:~ eoziolor$ 
 ```
 
-## Viewing hidden files
+### Viewing hidden files
 
 There are also files on your system that do not appear on normal list searches. They are called __hidden__ files and you can reveal them by appending -a at the end of ls.
 
@@ -199,7 +195,7 @@ campus-009-192:~ eoziolor$ ls -a
 .cups				.viminfo	
 ```
 
-## Absolute vs. Relative paths
+### Absolute vs. Relative paths
 
 There are two ways at getting to a folder. One way is to specify the absolute location of the folder:
 
@@ -230,7 +226,7 @@ campus-009-192:Desktop eoziolor$ pwd
 /Users/eoziolor/Desktop
 ```
 
-# Creating files and folders
+## Creating files and folders
 
 ### New folders
 
@@ -329,7 +325,7 @@ going
 on
 ```
 
-# Piping
+## Piping
 
 Piping is one of the most useful thing in bash script. The unix shell was made to do something to a file and be able to unitize these commands to pass a certain __pipeline__.
 
@@ -344,7 +340,7 @@ what
 
 In this case what I'm doing is printing our file and piping the output into the __head__ commnad, which allows me to print only the first 3 lines.
 
-# Grep, tr, wc, mv and many others
+## Grep, tr, wc, mv and many others
 
 I can use an abundance of commands to now manipulate this text. Let's look at a slightly more complicated document and see what we can do.
 
