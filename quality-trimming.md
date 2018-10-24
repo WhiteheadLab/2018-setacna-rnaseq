@@ -49,6 +49,7 @@ curl -L https://osf.io/p4fy5/download -o nema_subset_small_0Hour.zip
 curl -L https://osf.io/ewyv5/download -o nema_subset_small_6Hour.zip
 unzip nema_subset_small_0Hour.zip
 unzip nema_subset_small_6Hour.zip
+
 ```
 
 Define your $PROJECT variable to be the location of your work
@@ -179,24 +180,12 @@ If you are unable to use scp though a terminal output, you can see the fastqc ht
    
 ### Adapter trim each pair of files
 
-Quality trimming:
-
-```
-cd ..
-mkdir quality
-
-for filename in *gz; do   base=$(basename $filename .gz);   mv $filename $base;    done
-
-fastqc *.fastq
-multiqc .
-```
-
 Setup trim directory:
 ```
 cd ..
 mkdir trim
 cd trim
-ln -s ../data/*.fastq .
+ln -s ../data/*.fastq.gz .
 cat /opt/miniconda3/share/trimmomatic*/adapters/* > combined.fa
 ```
 
@@ -205,10 +194,10 @@ See excellent paper on trimming from [MacManes 2014](http://journal.frontiersin.
 Run:
 
 ```
-for filename in *_R1_*.fastq
+for filename in *_R1_*.fastq.gz
 do
 # first, make the base by removing fastq.gz
-  base=$(basename $filename .fastq)
+  base=$(basename $filename .fastq.gz)
   echo $base
   
 # now, construct the R2 filename by replacing R1 with R2
@@ -216,7 +205,7 @@ do
   echo $baseR2
         
 # finally, run Trimmomatic
-  trimmomatic PE ${base}.fastq ${baseR2}.fastq \
+  trimmomatic PE ${base}.fastq.gz ${baseR2}.fastq.gz \
     ${base}.qc.fq s1_se \
     ${baseR2}.qc.fq s2_se \
     ILLUMINACLIP:combined.fa:2:40:15 \
