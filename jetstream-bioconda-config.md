@@ -37,6 +37,14 @@ Then, run the following command (or start a new terminal session) in order to ac
 source ~/.bashrc
 ```
 
+Add channels
+
+```
+conda config --add channels defaults
+conda config --add channels conda-forge
+conda config --add channels bioconda
+```
+
 Try installing something:
 
 ```
