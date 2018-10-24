@@ -158,6 +158,24 @@ bioconda works on Mac and Linux.
 It does not require admin privileges to install, so you can
 install it on your own local cluster quite easily.
 
-## Rstudio activation.
+## Rstudio - Getting started
 
-At this point, RStudio will be installed and running on port 8787, and you can [follow these instructions](https://angus.readthedocs.io/en/2018/visualizing-blast-scores-with-RStudio.html) to set your password and log into it.
+Connect to RStudio by setting your password (note, password will not be visible on the screen):
+
+```
+sudo passwd $USER
+```
+
+figuring out your username:
+
+```
+echo My username is $USER
+```
+
+and finding YOUR RStudio server interface Web address:
+
+```
+echo http://$(hostname):8787/
+```
+
+Now go to that Web address in your Web browser, and log in with the username and password from above.
