@@ -8,24 +8,8 @@ Learning objectives:
 
 * Interpret rna-seq analysis results
 
-## Boot up a Jetstream
 
-[Boot an m1.medium Jetstream instance](jetstream/boot.md) and log in.
-
-## Install software
-
-We will be using salmon and edgeR. Salmon is installed through conda, but edgeR will require an additional script:
-
-```
-cd ~
-
-conda install -y salmon
-
-curl -L -O https://raw.githubusercontent.com/ngs-docs/angus/2018/scripts/install-edgeR.R
-sudo Rscript --no-save install-edgeR.R
-```
-
-## Make a new working directory and link the original data
+## Make a new working directory and link the trimmed reads and assembly
 
 We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/)), so the following commands will create a new folder `rnaseq` and link the data in:
 
@@ -33,51 +17,41 @@ We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi
 mkdir -p rnaseq
 cd rnaseq
 
-ln -fs ~/data/*.fastq.gz .
-ls
+ln -s ../trim/0Hour*.qc.fq.gz .
+ln -s ../trim/6Hour*.qc.fq.gz .
+
+ln -s ../assembly/nema_trinity/Trinity.fasta .
 ```
 
-## Download the yeast reference transcriptome:
-
+## Index the assembly:
 ```
-curl -O https://downloads.yeastgenome.org/sequence/S288C_reference/orf_dna/orf_coding.fasta.gz
-```
-
-## Index the yeast transcriptome:
-
-```
-salmon index --index yeast_orfs --type quasi --transcripts orf_coding.fasta.gz
+salmon index --index nema --type quasi --transcripts Trinity.fasta
 ```
 
 ## Run salmon on all the samples:
 
 ```
-for i in *.fastq.gz
+for R1 in *R1*.qc.fq.gz
 do
-   salmon quant -i yeast_orfs --libType U -r $i -o $i.quant --seqBias --gcBias
+  sample=$(basename $R1 extract.qc.fq.gz)
+  echo sample is $sample, R1 is $R1
+  R2=${R1/R1/R2}
+  echo R2 is $R2
+  salmon quant -i nema -p 2 -l IU -1 <(gunzip -c $R1) -2 <(gunzip -c $R2) -o ${sample}.quant
 done
+```
+
+## Take a look at quant output, [examples](https://github.com/ngs-docs/2015-nov-adv-rna/blob/master/salmon.rst)
+```
+head 0Hour_ATCACG_L002_R1_001.qc.fq.gz.quant/quant.sf
+```
+## Look at all the mapping rates:
+```
+find . -name \salmon_quant.log -exec grep -H "Mapping rate" {} \;
 ```
 
 Read up on [libtype, here](https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype).
 
-##  Collect all of the sample counts using [this Python script](https://raw.githubusercontent.com/ngs-docs/angus/2018/scripts/gather-counts.py):
-
-```
-curl -L -O https://raw.githubusercontent.com/ngs-docs/2018-ggg201b/master/lab6-rnaseq/gather-counts.py
-python2 gather-counts.py
-```
-
-##  Run edgeR (in R) using [this script](https://raw.githubusercontent.com/ngs-docs/angus/2018/scripts/yeast.salmon.R) and take a look at the output:
-
-```
-curl -L -O https://raw.githubusercontent.com/ngs-docs/angus/2018/scripts/yeast.salmon.R
-Rscript --no-save yeast.salmon.R
-```
-
-This will produce two plots, `yeast-edgeR-MA-plot.pdf` and
-`yeast-edgeR-MDS.pdf`. You can view them by going to your RStudio server file viewer, changing to  the directory `rnaseq`, and then clicking on them. If you see an error "Popup Blocked", then click the "Try again" button
-
- The `yeast-edgeR.csv` file contains the fold expression & significance information in a spreadsheet.
 
 ## Questions to ask/address
 
