@@ -53,24 +53,6 @@ find . -name \salmon_quant.log -exec grep -H "Mapping rate" {} \;
 Read up on [libtype, here](https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype).
 
 
-## Questions to ask/address
-
-1. What is the point or value of the [multidimensional scaling (MDS)](https://en.wikipedia.org/wiki/Multidimensional_scaling) plot?
-
-2. Why does the MA-plot have that shape?
-
-   Related: Why can't we just use fold expression to select the things we're interested in?
-
-   Related: How do we pick the FDR (false discovery rate) threshold?
-
-3. How do we know how many replicates (bio and/or technical) to do?
-
-   Related: what confounding factors are there for RNAseq analysis?
-
-   Related: what is our false positive/false negative rate?
-   
-4. What happens when you add new replicates?
-
 ## More reading
 
 "How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?" [Schurch et al., 2016](http://rnajournal.cshlp.org/content/22/6/839).
