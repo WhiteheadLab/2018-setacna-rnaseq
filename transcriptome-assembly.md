@@ -16,15 +16,6 @@ The answer is *de novo* assembly, and the basic idea is you feed in your reads a
 
 Trinity, developed at the [Broad Institute](http://www.broadinstitute.org/) and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. We will be using the [eel-pond protocol](https://eel-pond.readthedocs.io/en/latest) for our guide to doing RNA-seq assembly.
 
-
-## Install the TRINITY assembler
-
-The [Trinity assembler](https://www.ncbi.nlm.nih.gov/pubmed/21572440) can also install it through `conda`:
-
-```
-conda install -y trinity 
-```
-
 ## Change to a new working directory and link the original data
 
 We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/)), so the following commands will create a new folder `assembly` and link the trimmed data we prepared earlier in the newly created folder:
