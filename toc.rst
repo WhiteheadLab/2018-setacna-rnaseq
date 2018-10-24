@@ -9,6 +9,8 @@ Table of contents
 
    intro.md
 
+   bash_lesson.md
+
    jetstream/boot.md
 
    jetstream/login.md
