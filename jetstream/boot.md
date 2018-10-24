@@ -65,7 +65,7 @@ Select
 
 ![foo](images/Images.thumb.png)
 
-## Find the "RNASeq_1DayWorkshop"  base image (Oct 1, 2018 by jfischer), click on it
+## Find the "RNASeq_1DayWorkshop"  base image (Oct 15, 2018 by ljcohen), click on it
 
 Go to "Show All" tab and enter "RNASeq_1DayWorkshop" into the search bar - make sure it's from
 Oct 15st, 2018 by ljcohen. This images is based on Ubuntu 18.04 devel and docker, with Rstudio and [bioconda](https://bioconda.github.io/) package manager added.
