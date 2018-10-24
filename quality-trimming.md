@@ -230,20 +230,17 @@ do
         
 # finally, run Trimmomatic
   trimmomatic PE ${base}.fastq.gz ${baseR2}.fastq.gz \
-    ${base}.qc.fq s1_se \
-    ${baseR2}.qc.fq s2_se \
+    ${base}.qc.fq.gz s1_se.gz \
+    ${baseR2}.qc.fq.gz s2_se.gz \
     ILLUMINACLIP:combined.fa:2:40:15 \
     LEADING:2 TRAILING:2 \
     SLIDINGWINDOW:4:2 \
     MINLEN:25
-# gzip output
-  gzip -9c ${base}.qc.fq > ${base}.qc.fq.gz
-  gzip -9c ${baseR2}.qc.fq > ${baseR2}.qc.fq.gz
+
 # save the orphans
-  gzip -9c s1_se s2_se >> orphans.qc.fq.gz
-  rm -f s1_se s2_se
+  zcat s1_se.gz s2_se.gz >> orphans.qc.fq.gz
+  rm -f s1_se.gz s2_se.gz
 done
-rm -rf *.qc.fq
 
 ```
 Now, run fastqc again on trimmed files:
