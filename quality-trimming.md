@@ -1,21 +1,19 @@
 # Short read quality and trimming
 
-Start up a Jetstream m1.medium
-[as per Jetstream startup instructions](https://angus.readthedocs.io/en/2017/jetstream/boot.html).
+Let's get out of the environments we created:
 
+* Enter this twice to get out of both __base__ and __pony__
+
+```
+source deactivate
+```
 ---
 
 You should now be logged into your Jetstream computer!  You should see
 something like this
 
 ```
-titus@js-17-71:~$ 
-```
-## Source software and files from our computer 
-
-```
-echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
-source ~/.bashrc
+dibbears@js-168-17:~$ 
 ```
 
 ## Data source
