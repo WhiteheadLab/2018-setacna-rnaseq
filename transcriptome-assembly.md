@@ -16,9 +16,6 @@ The answer is *de novo* assembly, and the basic idea is you feed in your reads a
 
 Trinity, developed at the [Broad Institute](http://www.broadinstitute.org/) and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. We will be using the [eel-pond protocol](https://eel-pond.readthedocs.io/en/latest) for our guide to doing RNA-seq assembly.
 
-## Boot up a Jetstream
-
-[Boot an m1.medium Jetstream instance](jetstream/boot.md) and log in.
 
 ## Install the TRINITY assembler
 
@@ -41,46 +38,23 @@ ln -fs ~/quality/*.qc.fq.gz .
 ls
 ```
 
-## Applying Digital Normalization
-
-In this section, we’ll apply [digital normalization](http://arxiv.org/abs/1203.4802) and [variable-coverage k-mer abundance trimming](https://peerj.com/preprints/890/) to the reads prior to assembly. This has the effect of reducing the computational cost of assembly [without negatively affecting the quality of the assembly](https://peerj.com/preprints/505/). Although the appropriate approach would be to use all 6 samples, for time consideration we will be using just the first one, i.e. ERR458493.qc.fq.gz
-
+Combine all fq into 2 files (left.fq and right.fq)
 ```
-normalize-by-median.py --ksize 20 --cutoff 20 -M 10G --savegraph normC20k20.ct --force_single ERR458493.qc.fq.gz
+zcat *R1*.qc.fq.gz > left.fq
+zcat *R2*.qc.fq.gz > right.fq
+zcat orphans.qc.fq.gz >> left.fq
 ```
-
-This tools works mainly for paired-end reads, combined with a one file containing single-end reads. Given that all our samples are single end, we'll use the `--force_single` flag to force all reads to be considered as single-end. The parameter `--cutoff` indicates that when the median k-mer coverage level is above this number the read is not kept. Also note the `-M` parameter. This specifies how much memory diginorm should use, and should be less than the total memory on the computer you’re using. (See [choosing hash sizes for khmer for more information](http://khmer.readthedocs.io/en/v2.1.1/user/choosing-table-sizes.html).
-
-(This step should take about 2-3 minutes to complete)
-
-
-## Trim off likely erroneous k-mers
-
-Now, run through all the reads and trim off low-abundance parts of high-coverage reads
-
-```
-filter-abund.py --threads 4 --variable-coverage --normalize-to 18 normC20k20.ct *.keep
-```
-
-The parameter `--variable-coverage` requests that only trim low-abundance k-mers from sequences that have high coverage. The parameter `--normalize-to` bases the variable-coverage cutoff on this median k-mer abundance.
-
-(This step should take about 2-3 minutes to complete)
 
 ### Run the assembler
 
 
 Trinity works both with paired-end reads as well as single-end reads (including simultaneously both types at the same time). In the general case, the paired-end files are defined as `--left left.fq` and `--right right.fq` respectively. The single-end reads (a.k.a _orphans_) are defined by the flag `--single`. 
 
-First of all though, we need to make sure that there are no whitespaces in the header of the input fastq file. This is done using the following command:
-
-```
-cat ERR458493.qc.fq.gz.keep.abundfilt | tr -d ' ' > ERR458493.qc.fq.gz.keep.abundfilt.clean
-```
 
 So let's run the assembler as follows:
 
 ```
-time Trinity --seqType fq --max_memory 10G --CPU 4 --single ERR458493.qc.fq.gz.keep.abundfilt.clean --output yeast_trinity
+time Trinity --seqType fq --max_memory 30G --CPU 10 --left left.fq --right right.fq --output nema_trinity
 ```
 
 (This will take about 20 minutes)
