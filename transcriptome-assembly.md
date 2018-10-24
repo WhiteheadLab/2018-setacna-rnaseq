@@ -21,11 +21,11 @@ Trinity, developed at the [Broad Institute](http://www.broadinstitute.org/) and 
 We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/)), so the following commands will create a new folder `assembly` and link the trimmed data we prepared earlier in the newly created folder:
 
 ```
-cd ~/
-mkdir -p assembly
+cd ..
+mkdir assembly
 cd assembly
 
-ln -fs ~/quality/*.qc.fq.gz .
+ln -fs ${PROJECT}/trim/*.qc.fq.gz .
 ls
 ```
 
