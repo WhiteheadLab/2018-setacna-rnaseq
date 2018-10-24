@@ -1,8 +1,6 @@
-# RNAseq
+# Alignment and Read Quantification
 
 Learning objectives:
-
-* Install rna-seq software (salmon and edgeR) using conda
   
 * Learn mapping and differential gene expression analysis of rna-seq data
 
