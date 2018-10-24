@@ -1,18 +1,10 @@
 # Jetstream: install bioconda on a blank Linux machine.
 
 Learning objections:
-* learn what bioconda is and how to install it
+* learn what bioconda is
 * understand basic `conda` commands
 * learn how to list installed software packages 
 * learn how to manage multiple installation environments
-
-## Booting a "blank" machine
-
-Follow [ANGUS instructions, with m1.medium](https://angus.readthedocs.io/en/2018/jetstream/boot.html), using "18.04 Ubuntu devel and docker" as the starting image you select – rather than "DIBSI 2018 workshop image".
-
-Log in via the [Web shell or through ssh in your terminal](https://angus.readthedocs.io/en/2018/jetstream/boot.html#click-on-your-new-instance-to-get-more-information) if you are comfortable with that way now.
-
-Note that neither RStudio nor conda are installed.
 
 ## What is bioconda?
 
@@ -31,17 +23,15 @@ Conda makes sure that different installed packages don't have
 conflicting dependencies (we'll explain this below).
 
 ## Installing conda and enabling bioconda
+We have already installed conda on this instance, but please see the [installation HackMD](https://hackmd.io/im0eDxViQgmxTL4zYBfGoQ) after the class if you'd like to do this yourself.
 
-Download and install conda:
+To be able to use that installation, we need to let the instance know what path to find bioconda in:
 
+```{bash}
+echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
 ```
-curl -O -L https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-```
 
-Say "yes" to everything the installer asks, and accept default locations by pressing enter when it says "Miniconda3 will now be installed into this location". (If the prompt looks like this ">>>", then you are still within the installation process.)
-
-When the installation is complete and the regular prompt returns, run the following command (or start a new terminal session) in order to activate the conda environment:
+Then, run the following command (or start a new terminal session) in order to activate the conda environment:
 
 ```
 source ~/.bashrc
@@ -168,21 +158,6 @@ bioconda works on Mac and Linux.
 It does not require admin privileges to install, so you can
 install it on your own local cluster quite easily.
 
-## Bonus: installing RStudio Web on your running Linux box.
+## Rstudio activation.
 
-**Note:** this does require admin privileges, and you cannot run it on your local cluster. For your laptop, you can just install [the regular RStudio](https://www.rstudio.com).
-
-----
-
-Install necessary system software (gdebi and R):
-```
-sudo apt-get update && sudo apt-get -y install gdebi-core r-base
-```
-
-Now, download and install RStudio:
-```
-wget https://download2.rstudio.org/rstudio-server-1.1.453-amd64.deb
-sudo gdebi -n rstudio-server-1.1.453-amd64.deb
-```
-
-At this point, RStudio will be running on port 8787, and you can [follow these instructions](https://angus.readthedocs.io/en/2018/visualizing-blast-scores-with-RStudio.html) to set your password and log into it.
+At this point, RStudio will be installed and running on port 8787, and you can [follow these instructions](https://angus.readthedocs.io/en/2018/visualizing-blast-scores-with-RStudio.html) to set your password and log into it.
