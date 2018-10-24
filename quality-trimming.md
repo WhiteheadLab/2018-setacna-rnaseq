@@ -11,6 +11,12 @@ something like this
 ```
 titus@js-17-71:~$ 
 ```
+## Source software and files from our computer 
+
+```
+echo export PATH=$PATH:/opt/miniconda3/bin >> ~/.bashrc
+source ~/.bashrc
+```
 
 ## Data source
 
@@ -39,10 +45,10 @@ Download subset of data:
 cd /mnt/work
 mkdir data
 cd data
-curl -L https://osf.io/p4fy5/download -o nema_subset_0Hour.zip
-curl -L https://osf.io/ewyv5/download -o nema_subset_6Hour.zip
-unzip nema_subset_0Hour.zip
-unzip nema_subset_6Hour.zip
+curl -L https://osf.io/p4fy5/download -o nema_subset_small_0Hour.zip
+curl -L https://osf.io/ewyv5/download -o nema_subset_small_6Hour.zip
+unzip nema_subset_small_0Hour.zip
+unzip nema_subset_small_6Hour.zip
 ```
 
 Define your $PROJECT variable to be the location of your work
@@ -170,46 +176,67 @@ where the first argument after `scp` is your login and path for the files we wan
 
 If you are unable to use scp though a terminal output, you can see the fastqc html output [here](_static/6Hour_CGATGT_L002_R2_003.extract_fastqc.html)
 
-### Find the right Illumina adapters
-
-You'll need to know which Illumina sequencing adapters were used for your library in order to trim them off. Below, we will use the TruSeq3-PE.fa adapters:
-
-```
-wget https://anonscm.debian.org/cgit/debian-med/trimmomatic.git/plain/adapters/TruSeq3-PE.fa
-```
-
-Note: If running this on your own data, make sure these are the right adapters for your data.  If they are the right adapters, you should see that some of the reads are trimmed; if they're not, you won't see anything get trimmed.
    
 ### Adapter trim each pair of files
+
+Quality trimming:
+
+```
+cd ..
+mkdir quality
+
+for filename in *gz; do   base=$(basename $filename .gz);   mv $filename $base;    done
+
+fastqc *.fastq
+multiqc .
+```
+
+Setup trim directory:
+```
+cd ..
+mkdir trim
+cd trim
+ln -s ../data/*.fastq .
+cat /opt/miniconda3/share/trimmomatic*/adapters/* > combined.fa
+```
 
 See excellent paper on trimming from [MacManes 2014](http://journal.frontiersin.org/article/10.3389/fgene.2014.00013/full).
 
 Run:
 
 ```
-for filename in *_R1_*.fastq.gz
+for filename in *_R1_*.fastq
 do
 # first, make the base by removing fastq.gz
-  base=$(basename $filename .fastq.gz)
+  base=$(basename $filename .fastq)
   echo $base
-        
+  
 # now, construct the R2 filename by replacing R1 with R2
   baseR2=${base/_R1_/_R2_}
   echo $baseR2
         
 # finally, run Trimmomatic
-  TrimmomaticPE ${base}.fastq.gz ${baseR2}.fastq.gz \
-    ${base}.qc.fq.gz s1_se \
-    ${baseR2}.qc.fq.gz s2_se \
-    ILLUMINACLIP:TruSeq3-PE.fa:2:40:15 \
+  trimmomatic PE ${base}.fastq ${baseR2}.fastq \
+    ${base}.qc.fq s1_se \
+    ${baseR2}.qc.fq s2_se \
+    ILLUMINACLIP:combined.fa:2:40:15 \
     LEADING:2 TRAILING:2 \
     SLIDINGWINDOW:4:2 \
     MINLEN:25
-        
+# gzip output
+  gzip -9c ${base}.qc.fq > ${base}.qc.fq.gz
+  gzip -9c ${baseR2}.qc.fq > ${baseR2}.qc.fq.gz
 # save the orphans
   gzip -9c s1_se s2_se >> orphans.qc.fq.gz
   rm -f s1_se s2_se
 done
+rm -rf *.qc.fq
+
+```
+Now, run fastqc again on trimmed files:
+```
+fastqc *.qc.fq.gz
+multiqc .
 ```
 
 The paired sequences output by this set of commands will be in the files ending in ``.qc.fq.gz``, with any orphaned sequences all together
