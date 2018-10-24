@@ -65,10 +65,10 @@ Select
 
 ![foo](images/Images.thumb.png)
 
-## Find the "Ubuntu 18.04 Devel and Docker"  base image (Oct 1, 2018 by jfischer), click on it
+## Find the "RNASeq_1DayWorkshop"  base image (Oct 1, 2018 by jfischer), click on it
 
-Enter "Ubuntu 18.04" into the search bar - make sure it's from
-Oct 1st, 2018 by jfischer. This images is based on Ubuntu 18.04 devel and docker, with Rstudio and [bioconda](https://bioconda.github.io/) package manager added.
+Go to "Show All" tab and enter "RNASeq_1DayWorkshop" into the search bar - make sure it's from
+Oct 15st, 2018 by ljcohen. This images is based on Ubuntu 18.04 devel and docker, with Rstudio and [bioconda](https://bioconda.github.io/) package manager added.
 
 Here, "image" refers to the resources that are pre-loaded into your computing workspace on your instance. Think of it like apps that come with your phone before you add new ones on your own. Loading this image built before the workshop prevents us from having to choose our operating distrubution and download frequently-used packages on our own, and makes sure that everyone at the workshop has the same basic computing environment. That ensures that the commands we tell you to use will work, and makes it easier for TAs to figure out what's wrong if you run into error messages.
 
