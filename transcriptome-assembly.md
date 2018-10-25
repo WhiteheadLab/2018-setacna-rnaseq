@@ -31,9 +31,8 @@ ls
 
 Combine all fq into 2 files (left.fq and right.fq)
 ```
-zcat *R1*.qc.fq.gz > left.fq
-zcat *R2*.qc.fq.gz > right.fq
-zcat orphans.qc.fq.gz >> left.fq
+zcat *R1*.qc.fq.gz orphans.qc.fq.gz | gzip > left.fq.gz
+zcat *R2*.qc.fq.gz | gzip > right.fq.gz
 ```
 
 ### Run the assembler
