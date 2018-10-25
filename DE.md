@@ -15,15 +15,16 @@ References:
 
 ## Move salmon output quant files to their own directory
 
-```
-export PROJECT=/mnt/work
-cd $PROJECT/quant
-mkdir salmon_out
+RStudio only recognizes files in home `~/`. So, soft link files there:
 
-#move the files
-mv *.quant salmon_out
-cd  salmon_out
 ```
+mkdir ~/DE
+cd ~/DE
+mkdir quant
+cd quant
+ln -s /opt/rnaseq/quant/*.quant .
+```
+
 
 ## Download gene and transcript id relationships to your home directory
 
@@ -41,6 +42,7 @@ from [Igor Dolgalev](https://med.nyu.edu/research/scientific-cores-shared-resour
 ```
 cd
 wget https://raw.githubusercontent.com/ngs-docs/2017-dibsi-rnaseq/master/plotPCAWithSampleNames.R
+cp /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv .
 ```
 
 ## RStudio!
@@ -59,6 +61,18 @@ source('~/plotPCAWithSampleNames.R')
 ```
 
 Tell RStudio where your files are and ask whether they exist:
+
+```
+setwd("~/DE/quant/")
+dir<-'~/DE'
+files_list = list.files()
+files <- file.path(dir, "quant",files_list, "quant.sf")
+names(files) <- c("0Hour_1","0Hour_2","0Hour_3","0Hour_4","0Hour_5","6Hour_1","6Hour_2","6Hour_3","6Hour_4","6Hour_5")
+files
+print(file.exists(files))
+```
+
+Old version: 
 ```
 setwd("/mnt/work/quant/salmon_out/")
 dir<-"/mnt/work/quant/"
