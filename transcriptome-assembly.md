@@ -35,6 +35,14 @@ cat *R1*.qc.fq.gz orphans.qc.fq.gz > left.fq.gz
 cat *R2*.qc.fq.gz > right.fq.gz
 ```
 
+### Before you run the assembler
+
+It is time to clean up some space on your hard drive. Let's delete the original files. __It is very important for you to always keep the original files somewhere. In our case we can recover them from an online backup, but if you delete these, you won't be able to recover them unless you have a backup__.
+
+```{bash}
+rm -rf ${PROJECT}/data/*
+```
+
 ### Run the assembler
 
 
