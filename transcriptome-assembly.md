@@ -31,8 +31,8 @@ ls
 
 Combine all fq into 2 files (left.fq and right.fq)
 ```
-zcat *R1*.qc.fq.gz orphans.qc.fq.gz | gzip > left.fq.gz
-zcat *R2*.qc.fq.gz | gzip > right.fq.gz
+cat *R1*.qc.fq.gz orphans.qc.fq.gz > left.fq.gz
+cat *R2*.qc.fq.gz > right.fq.gz
 ```
 
 ### Run the assembler
@@ -44,7 +44,7 @@ Trinity works both with paired-end reads as well as single-end reads (including 
 So let's run the assembler as follows:
 
 ```
-time Trinity --seqType fq --max_memory 30G --CPU 10 --left left.fq --right right.fq --output nema_trinity
+time Trinity --seqType fq --max_memory 30G --CPU 10 --left left.fq.gz --right right.fq.gz --output nema_trinity
 ```
 
 (This will take about 20 minutes)
