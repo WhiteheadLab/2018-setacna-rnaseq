@@ -47,7 +47,7 @@ So let's run the assembler as follows:
 time Trinity --seqType fq --max_memory 30G --CPU 10 --left left.fq.gz --right right.fq.gz --output nema_trinity
 ```
 
-(This will take about 20 minutes)
+(This will take about 5 minutes)
 
 You should see something like:
 
