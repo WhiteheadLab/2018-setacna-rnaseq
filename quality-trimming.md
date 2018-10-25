@@ -22,27 +22,19 @@ We will be using mRNAseq reads from a small subset of data from [Nematostella ve
 
 Original RNAseq workflow protocol [here](https://khmer-protocols.readthedocs.io/en/ctb/mrnaseq/), more updated protocol [here](http://eel-pond.readthedocs.io/en/latest/).
 
-Load your data into ``/mnt/work/data``.  You may need to make the
-`/mnt/` directory writeable by doing
+Load your data into ``work/data``.
+
+First, create the subdirectories
 
 ```
-sudo chmod a+rwxt /mnt
-```
-
-First, and then creating the subdirectories
-
-```
-cd /mnt
+cd ~/
 mkdir -p work work/data
-cd /mnt/work/data
+cd work/data
 ```
 
 Download subset of data:
 
 ```
-cd /mnt/work
-mkdir data
-cd data
 curl -L https://osf.io/p4fy5/download -o nema_subset_small_0Hour.zip
 curl -L https://osf.io/ewyv5/download -o nema_subset_small_6Hour.zip
 unzip nema_subset_small_0Hour.zip
@@ -54,7 +46,7 @@ Define your $PROJECT variable to be the location of your work
 directory; in this case, it will be ``/mnt/work``:
 
 ```
-export PROJECT=/mnt/work
+export PROJECT=~/work
 ```
 
 Now load your data in!
@@ -243,6 +235,7 @@ do
 done
 
 ```
+
 Now, run fastqc again on trimmed files:
 ```
 fastqc *.qc.fq.gz
