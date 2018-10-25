@@ -92,6 +92,7 @@ library(DESeq2)
 library("lattice")
 library(tximport)
 library(readr)
+install.packages('gplots')
 library(gplots)
 library(RColorBrewer)
 source('~/plotPCAWithSampleNames.R')
@@ -100,7 +101,6 @@ source('~/plotPCAWithSampleNames.R')
 Tell RStudio where your files are and ask whether they exist:
 
 ```
-setwd("~/DE/quant/")
 dir<-'~/DE'
 files_list = list.files()
 files <- file.path(dir, "quant",files_list, "quant.sf")
@@ -109,25 +109,17 @@ files
 print(file.exists(files))
 ```
 
-Old version: 
-```
-setwd("/mnt/work/quant/salmon_out/")
-dir<-"/mnt/work/quant/"
-files_list = list.files()
-files <- file.path(dir, "salmon_out",files_list, "quant.sf")
-names(files) <- c("0Hour_1","0Hour_2","0Hour_3","0Hour_4","0Hour_5","6Hour_1","6Hour_2","6Hour_3","6Hour_4","6Hour_5")
-files
-print(file.exists(files))
-```
-
 Grab the [gene names](https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-2017/master/_static/nema_transcript_gene_id.txt) and transcript ID file to [summarize expression at the gene level](https://f1000research.com/articles/4-1521/v2).
 
 ```
-tx2gene <- read.table("~/nema_transcript_gene_id.txt",sep="\t")
+tx2gene <- read.csv("~/nema_gene_name_id.csv")
+tx2gene <- tx2gene[,c(4,3)]
 cols<-c("transcript_id","gene_id")
 colnames(tx2gene)<-cols
 head(tx2gene)
+
 txi.salmon <- tximport(files, type = "salmon", tx2gene = tx2gene,importer=read.delim)
+
 head(txi.salmon$counts)
 dim(txi.salmon$counts)
 ```
