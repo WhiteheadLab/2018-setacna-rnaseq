@@ -190,7 +190,8 @@ Set a threshold cutoff of padj<0.05 and ± log2FC 1:
 
 ```
 resSig = res_ordered[res_ordered$padj < 0.05, ]
-resSig = resSig[resSig$log2FoldChange > 1 | resSig$log2FoldChange < -1,]
+# threshold +- log2foldchange 1, but let's not do this - controversial
+#resSig = resSig[resSig$log2FoldChange > 1 | resSig$log2FoldChange < -1,]
 write.csv(resSig,file="nema_DESeq_padj0.05_log2FC1.csv")
 ```
 
