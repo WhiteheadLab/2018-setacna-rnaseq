@@ -82,13 +82,13 @@ at the end.
 First, save the assembly:
 
 ```
-cp yeast_trinity/Trinity.fasta yeast-transcriptome-assembly.fa
+cp nema_trinity/Trinity.fasta nema-transcriptome-assembly.fa
 ``` 
  
 Now, look at the beginning:
 
 ```
-head yeast-transcriptome-assembly.fa
+head nema-transcriptome-assembly.fa
 ```
     
 It's RNA! Yay!
@@ -96,7 +96,7 @@ It's RNA! Yay!
 Let's capture also some statistics of the Trinity assembly. Trinity provides a handy tool to do exactly that:
 
 ```
-TrinityStats.pl yeast-transcriptome-assembly.fa
+TrinityStats.pl nema-transcriptome-assembly.fa
 ```
 
 The output should look something like the following:
