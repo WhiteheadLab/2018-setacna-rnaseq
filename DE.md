@@ -31,7 +31,7 @@ ln -s ${PROJECT}/rnaseq/*.quant .
 
 Generated with [dammit](http://rnaseq-workshop-2017.readthedocs.io/en/latest/dammit_annotation.html) annotation and summarized with this [script](https://gist.github.com/ljcohen/3958c91fe39c92e51cb4544d0b6b8f24).
 ```
-cd ..
+cd 
 wget https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-2017/master/_static/nema_transcript_gene_id.txt
 
 ```
