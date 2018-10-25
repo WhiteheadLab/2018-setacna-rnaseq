@@ -18,11 +18,12 @@ References:
 RStudio only recognizes files in home `~/`. So, soft link files there:
 
 ```
+cd
 mkdir ~/DE
-cd ~/DE
+cd DE
 mkdir quant
 cd quant
-ln -s /opt/rnaseq/quant/*.quant .
+ln -s ${PROJECT}/rnaseq/*.quant .
 ```
 
 
@@ -30,7 +31,7 @@ ln -s /opt/rnaseq/quant/*.quant .
 
 Generated with [dammit](http://rnaseq-workshop-2017.readthedocs.io/en/latest/dammit_annotation.html) annotation and summarized with this [script](https://gist.github.com/ljcohen/3958c91fe39c92e51cb4544d0b6b8f24).
 ```
-cd
+cd ..
 wget https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-2017/master/_static/nema_transcript_gene_id.txt
 
 ```
@@ -40,12 +41,48 @@ wget https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-
 from [Igor Dolgalev](https://med.nyu.edu/research/scientific-cores-shared-resources/applied-bioinformatics-laboratories/leadership)
 
 ```
-cd
 wget https://raw.githubusercontent.com/ngs-docs/2017-dibsi-rnaseq/master/plotPCAWithSampleNames.R
 cp /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv .
 ```
 
-## RStudio!
+
+## Install Rstudio dependencies
+
+```
+sudo apt-get install -y libxml2 libxml2-dev libcurl4-gnutls-dev libssl-dev
+```
+
+Install DESeq2
+
+```
+curl -O -L https://github.com/ngs-docs/angus/raw/2017/_static/install-deseq2.R
+sudo Rscript --no-save install-deseq2.R
+```
+
+
+## Rstudio reminder
+
+Connect to RStudio by setting your password (note, password will not be visible on the screen):
+
+```
+sudo passwd $USER
+```
+
+figuring out your username:
+
+```
+echo My username is $USER
+```
+
+and finding YOUR RStudio server interface Web address:
+
+```
+echo http://$(hostname):8787/
+```
+
+Now go to that Web address in your Web browser, and log in with the username and password from above.
+
+## Working in Rstudio:
 
 From this point on, we will be adding these commands into R Studio.
 
