@@ -35,10 +35,10 @@ cd work/data
 Download subset of data:
 
 ```
-curl -L https://osf.io/p4fy5/download -o nema_subset_small_0Hour.zip
-curl -L https://osf.io/ewyv5/download -o nema_subset_small_6Hour.zip
-unzip nema_subset_small_0Hour.zip
-unzip nema_subset_small_6Hour.zip
+curl -L https://osf.io/365fg/download -o nema_subset_0Hour.zip
+curl -L https://osf.io/9tf2g/download -o nema_subset_6Hour.zip
+unzip nema_subset_0Hour.zip
+unzip nema_subset_6Hour.zip
 
 ```
 
