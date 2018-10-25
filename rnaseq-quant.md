@@ -12,6 +12,7 @@ Learning objectives:
 We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/)), so the following commands will create a new folder `rnaseq` and link the data in:
 
 ```
+cd ..
 mkdir -p rnaseq
 cd rnaseq
 
