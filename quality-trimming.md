@@ -65,7 +65,7 @@ If you see all the files you think you should, good!  Otherwise, debug.
 These are FASTQ files -- let's take a look at them:
 
 ```
-less 0Hour_ATCACG_L002_R1_001.fastq.gz
+less 0Hour_ATCACG_L002_R1_001.fastq
 ```
 
 (use the spacebar to scroll down, and type 'q' to exit 'less')
@@ -85,7 +85,7 @@ Make sure you've got the PROJECT location defined, and your data is there:
 
 ```
 set -u
-printf "\nMy raw data is in $PROJECT/data/, and consists of $(ls -1 ${PROJECT}/data/*.fastq.gz | wc -l) files\n\n"
+printf "\nMy raw data is in $PROJECT/data/, and consists of $(ls -1 ${PROJECT}/data/*.fastq | wc -l) files\n\n"
 set +u
 ```
 *Important:* If you get an error above or the count of files is wrong...STOP!! Revisit the installation instructions!
@@ -103,7 +103,7 @@ cd quality
 Now, link the data files into your new workspace
 
 ```
-ln -s ../data/*.fastq.gz .
+ln -s ../data/*.fastq .
 ```
 
 (Linking with `ln` avoids having to make a copy of the files, which will take up storage space.)
@@ -111,13 +111,13 @@ ln -s ../data/*.fastq.gz .
 Check to make sure it worked
 
 ```
-printf "I see $(ls -1 *.fastq.gz | wc -l) files here.\n"
+printf "I see $(ls -1 *.fastq | wc -l) files here.\n"
 ```
 
 You can also do an ``ls`` to list the files.
 
-If you see only one entry, `*.fastq.gz`, then the ln command above didn't work properly.  One possibility is that your files aren't in your data directory; another is that their names don't end with
-`.fastq.gz`.
+If you see only one entry, `*.fastq`, then the ln command above didn't work properly.  One possibility is that your files aren't in your data directory; another is that their names don't end with
+`.fastq`.
 
 ### FastQC
 
@@ -130,7 +130,7 @@ you.
 Now, run FastQC on two files:
 
 ```
-fastqc *.fastq.gz
+fastqc *.fastq
 ```
 
 After this finishes running (has to run on each file so might take a while), type 'ls':
@@ -187,7 +187,7 @@ You can also view this output [here](_static/multiqc_report.html)
 As an alternative to viewing the files on the Rstudio server, we can secure copy (scp) these files to our own laptops, and view them from there.
 ```
 mkdir ~/Desktop/nema_fastqc  # make a directory for these files
-scp username@ip.address:/mnt/work/quality/*html ~/Desktop/nema_fastqc
+scp username@ip.address:/work/quality/*html ~/Desktop/nema_fastqc
 ```
 where the first argument after `scp` is your login and path for the files we want to copy (from the jetstream instance), and the second argument is the path to place the files on our own computer.
 
@@ -201,7 +201,7 @@ Setup trim directory:
 cd ..
 mkdir trim
 cd trim
-ln -s ../data/*.fastq.gz .
+ln -s ../data/*.fastq .
 cat /opt/miniconda3/share/trimmomatic*/adapters/* > combined.fa
 ```
 
@@ -210,10 +210,10 @@ See excellent paper on trimming from [MacManes 2014](http://journal.frontiersin.
 Run:
 
 ```
-for filename in *_R1_*.fastq.gz
+for filename in *_R1_*.fastq
 do
-# first, make the base by removing fastq.gz
-  base=$(basename $filename .fastq.gz)
+# first, make the base by removing fastq
+  base=$(basename $filename .fastq)
   echo $base
   
 # now, construct the R2 filename by replacing R1 with R2
@@ -221,7 +221,7 @@ do
   echo $baseR2
         
 # finally, run Trimmomatic
-  trimmomatic PE ${base}.fastq.gz ${baseR2}.fastq.gz \
+  trimmomatic PE ${base}.fastq ${baseR2}.fastq \
     ${base}.qc.fq.gz s1_se.gz \
     ${baseR2}.qc.fq.gz s2_se.gz \
     ILLUMINACLIP:combined.fa:2:40:15 \
