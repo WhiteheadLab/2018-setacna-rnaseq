@@ -22,3 +22,5 @@ Table of contents
    transcriptome-assembly.md
 
    rnaseq-quant.md
+
+   DE.md
