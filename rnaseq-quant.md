@@ -26,7 +26,7 @@ ln -s ../assembly/nema-transcriptome-assembly.fa .
 
 ## Index the assembly:
 ```
-salmon index --index nema --type quasi --transcripts Trinity.fasta
+salmon index --index nema --type quasi --transcripts nema-transcriptome-assembly.fa
 ```
 
 ## Run salmon on all the samples:
