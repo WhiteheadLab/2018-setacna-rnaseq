@@ -31,6 +31,9 @@ salmon index --index nema --type quasi --transcripts nema-transcriptome-assembly
 
 ## Run salmon on all the samples:
 
+* What are the flags used in the salmon command?
+* Read up on [libtype, here](https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype).
+
 ```
 for R1 in *R1*.qc.fq.gz
 do
@@ -44,7 +47,7 @@ done
 
 ## Take a look at quant output
 
-[Examples of exploring the output](https://github.com/ngs-docs/2015-nov-adv-rna/blob/master/salmon.rst)
+* [Examples of exploring the output](https://github.com/ngs-docs/2015-nov-adv-rna/blob/master/salmon.rst)
 ```
 head 0Hour_ATCACG_L002_R1_001.qc.fq.gz.quant/quant.sf
 ```
@@ -53,13 +56,10 @@ head 0Hour_ATCACG_L002_R1_001.qc.fq.gz.quant/quant.sf
 find . -name \salmon_quant.log -exec grep -H "Mapping rate" {} \;
 ```
 
-Read up on [libtype, here](https://salmon.readthedocs.io/en/latest/salmon.html#what-s-this-libtype).
 
 
 ## More reading
 
-"How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?" [Schurch et al., 2016](http://rnajournal.cshlp.org/content/22/6/839).
-
-"Salmon provides accurate, fast, and bias-aware transcript expression estimates using dual-phase inference" [Patro et al., 2016](http://biorxiv.org/content/early/2016/08/30/021592).
-
-Also see [seqanswers](http://seqanswers.com/) and [biostars](https://www.biostars.org/).
+* Schurch et al. 2016. ["How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?"](http://rnajournal.cshlp.org/content/22/6/839).
+* Patro et al. 2017 ["Salmon provides accurate, fast, and bias-aware transcript expression estimates using dual-phase inference"](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5600148/).
+* [Salmon documentation](https://salmon.readthedocs.io/en/latest/salmon.html)
