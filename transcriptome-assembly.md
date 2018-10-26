@@ -51,15 +51,21 @@ You should see something like:
 ```
 ** Harvesting all assembled transcripts into a single multi-fasta file...
 
-Saturday, June 30, 2018: 16:42:08       CMD: find /home/tx160085/assembly/yeast_trinity/read_partitions/ -name '*inity.fasta'  | /opt/miniconda/opt/trinity-2.6.6/util/support_scripts /partitioned_trinity_aggregator.pl TRINITY_DN > /home/tx160085/assembly/yeast_trinity/Trinity.fasta.tmp 
--relocating /home/tx160085/assembly/yeast_trinity/Trinity.fasta.tmp to /home/tx160085/assembly/yeast_trinity/Trinity.fasta
-Saturday, June 30, 2018: 16:42:08       CMD: mv /home/tx160085/assembly/yeast_trinity/Trinity.fasta.tmp /home/tx160085/assembly/yeast_trinity/Trinity.fasta
+Thursday, October 25, 2018: 21:55:15	CMD: find /home/dibbears/work/assembly/nema_trinity/read_partitions/ -name '*inity.fasta'  | /opt/miniconda3/opt/trinity-2.8.4/util/support_scripts/partitioned_trinity_aggregator.pl --token_prefix TRINITY_DN --output_prefix /home/dibbears/work/assembly/nema_trinity/Trinity.tmp
+-relocating Trinity.tmp.fasta to /home/dibbears/work/assembly/nema_trinity/Trinity.fasta
+Thursday, October 25, 2018: 21:55:15	CMD: mv Trinity.tmp.fasta /home/dibbears/work/assembly/nema_trinity/Trinity.fasta
+
 
 ###################################################################
-Trinity assemblies are written to /home/tx160085/assembly/yeast_trinity/Trinity.fasta
+Trinity assemblies are written to /home/dibbears/work/assembly/nema_trinity/Trinity.fasta
 ###################################################################
 
-Saturday, June 30, 2018: 16:42:08       CMD: /opt/miniconda/opt/trinity-2.6.6/util/support_scripts/get_Trinity_gene_to_trans_map.pl /home/tx160085/assembly/yeast_trinity/Trinity.fasta > /home/tx160085/assembly/yeast_trinity/Trinity.fasta.gene_trans_map
+
+Thursday, October 25, 2018: 21:55:15	CMD: /opt/miniconda3/opt/trinity-2.8.4/util/support_scripts/get_Trinity_gene_to_trans_map.pl /home/dibbears/work/assembly/nema_trinity/Trinity.fasta > /home/dibbears/work/assembly/nema_trinity/Trinity.fasta.gene_trans_map
+
+real	7m7.692s
+user	23m59.929s
+sys	13m32.485s
 ```
 
 at the end.
@@ -94,37 +100,38 @@ The output should look something like the following:
 ################################
 ## Counts of transcripts, etc.
 ################################
-Total trinity 'genes':  3305
-Total trinity transcripts:      3322
-Percent GC: 42.05
+Total trinity 'genes':	217
+Total trinity transcripts:	220
+Percent GC: 48.24
 
 ########################################
 Stats based on ALL transcript contigs:
 ########################################
 
-        Contig N10: 1355
-        Contig N20: 1016
-        Contig N30: 781
-        Contig N40: 617
-        Contig N50: 502
+	Contig N10: 1763
+	Contig N20: 819
+	Contig N30: 548
+	Contig N40: 407
+	Contig N50: 320
 
-        Median contig length: 319
-        Average contig: 441.65
-        Total assembled bases: 1467173
+	Median contig length: 245.5
+	Average contig: 351.60
+	Total assembled bases: 77353
+
 
 #####################################################
 ## Stats based on ONLY LONGEST ISOFORM per 'GENE':
 #####################################################
 
-        Contig N10: 1358
-        Contig N20: 1016
-        Contig N30: 781
-        Contig N40: 617
-        Contig N50: 500
+	Contig N10: 1034
+	Contig N20: 605
+	Contig N30: 454
+	Contig N40: 357
+	Contig N50: 303
 
-        Median contig length: 319
-        Average contig: 440.93
-        Total assembled bases: 1457279
+	Median contig length: 245
+	Average contig: 328.43
+	Total assembled bases: 71270
 ```
 
 This is a set of summary stats about your assembly. Are they good? Bad? How would you know?
