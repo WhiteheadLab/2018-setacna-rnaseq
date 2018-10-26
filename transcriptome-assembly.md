@@ -3,22 +3,20 @@
 Learning objectives:
 
 * Learn what is Transcriptome assembly?
-* Different types of assemblies
+
 * How do assemblers work?
 * Checking the quality of assembly
 * Understanding Transcriptome assembly
 
-In [variant calling](http://angus.readthedocs.io/en/2018/mapping-variant-calling.html), we mapped reads to a reference and looked systematically for differences.
+What if you are working with a species with no existing reference genome or transcriptome. How do you construct one?
 
-But what if you don't have a reference? How do you construct one?
+The answer is *de novo* assembly. The basic idea with *de novo* transcriptome assembly is you feed in your reads and you get out a bunch of *contigs* that represent transcripts, or stretches of RNA present in the reads that don't have any long repeats or much significant polymorphism. You run a  *de novo* transcriptome assembly program using the trimmed reads as input and get out a pile of assembled RNA.
 
-The answer is *de novo* assembly, and the basic idea is you feed in your reads and you get out a bunch of *contigs*, that represent stretches of RNA present in the reads that don't have any long repeats or much significant polymorphism.  Like everything else, the basic idea is that you run a program, feed in the reads, and get out a pile of assembled RNA.
-
-Trinity, developed at the [Broad Institute](http://www.broadinstitute.org/) and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/, represents a novel method for the efficient and robust de novo reconstruction of transcriptomes from RNA-seq data. We will be using the [eel-pond protocol](https://eel-pond.readthedocs.io/en/latest) for our guide to doing RNA-seq assembly.
+Trinity, one of the leading *de novo* transcriptome assemblers, was developed at the [Broad Institute](http://www.broadinstitute.org/) and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/). We will be losely following steps from the [Eel pond protocol](https://eel-pond.readthedocs.io/en/latest) for our guide to doing RNA-seq assembly.
 
 ## Change to a new working directory and link the original data
 
-We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/)), so the following commands will create a new folder `assembly` and link the trimmed data we prepared earlier in the newly created folder:
+The following commands will create a new folder `assembly` and link the trimmed data we prepared earlier in the newly created folder:
 
 ```
 cd ..
@@ -36,7 +34,6 @@ cat *R2*.qc.fq.gz > right.fq.gz
 ```
 
 ### Run the assembler
-
 
 Trinity works both with paired-end reads as well as single-end reads (including simultaneously both types at the same time). In the general case, the paired-end files are defined as `--left left.fq` and `--right right.fq` respectively. The single-end reads (a.k.a _orphans_) are defined by the flag `--single`. 
 
