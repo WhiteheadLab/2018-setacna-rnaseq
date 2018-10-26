@@ -42,7 +42,9 @@ do
 done
 ```
 
-## Take a look at quant output, [examples](https://github.com/ngs-docs/2015-nov-adv-rna/blob/master/salmon.rst)
+## Take a look at quant output
+
+[Examples of exploring the output](https://github.com/ngs-docs/2015-nov-adv-rna/blob/master/salmon.rst)
 ```
 head 0Hour_ATCACG_L002_R1_001.qc.fq.gz.quant/quant.sf
 ```
