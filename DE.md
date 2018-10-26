@@ -12,13 +12,12 @@ References:
 [DE lecture by Jane Khudyakov, July 2017](_static/Jane_differential_expression.pdf)
 
 
-
 ## Move salmon output quant files to their own directory
 
 RStudio only recognizes files in home `~/`. So, soft link files there:
 
 ```
-cd ..
+cd ~/work
 mkdir DE
 cd DE
 mkdir quant
@@ -31,6 +30,7 @@ ln -s ${PROJECT}/rnaseq/*.quant .
 
 Generated with the [dammit](https://angus.readthedocs.io/en/2018/dammit_annotation.html) annotation pipeline written by [Camille Scott](http://www.camillescott.org/dammit/).
 ```
+cd ~/work/DE
 cp /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv .
 ```
 
@@ -39,10 +39,16 @@ cp /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv .
 from [Igor Dolgalev](https://med.nyu.edu/research/scientific-cores-shared-resources/applied-bioinformatics-laboratories/leadership)
 
 ```
-cd
+cd ~
 wget https://raw.githubusercontent.com/ngs-docs/2017-dibsi-rnaseq/master/plotPCAWithSampleNames.R
 ```
+## RUN THIS DURING LUNCH BREAK
 
+```
+cd ~
+curl -O -L https://github.com/ngs-docs/angus/raw/2017/_static/install-deseq2.R
+sudo Rscript --no-save install-deseq2.R
+```
 
 ## Rstudio reminder
 
@@ -73,7 +79,7 @@ source('~/plotPCAWithSampleNames.R')
 Tell RStudio where your files are and ask whether they exist:
 
 ```
-dir<-'~/DE'
+dir<-'~/work/DE'
 files_list = list.files()
 files <- file.path(dir, "quant",files_list, "quant.sf")
 names(files) <- c("0Hour_1","0Hour_2","0Hour_3","0Hour_4","0Hour_5","6Hour_1","6Hour_2","6Hour_3","6Hour_4","6Hour_5")
@@ -81,10 +87,10 @@ files
 print(file.exists(files))
 ```
 
-Grab the [gene names](https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-2017/master/_static/nema_transcript_gene_id.txt) and transcript ID file to [summarize expression at the gene level](https://f1000research.com/articles/4-1521/v2).
+Use the `nema_gene_name_id.csv` file to [summarize expression at the gene level](https://f1000research.com/articles/4-1521/v2).
 
 ```
-tx2gene <- read.csv("~/nema_gene_name_id.csv")
+tx2gene <- read.csv("~/work/DE/nema_gene_name_id.csv")
 tx2gene <- tx2gene[,c(4,3)]
 cols<-c("transcript_id","gene_id")
 colnames(tx2gene)<-cols
@@ -117,7 +123,7 @@ counts_table = counts( dds, normalized=TRUE )
 
 Filtering out low expression transcripts:
 
-See plot from [Lisa Komoroske](_static/Before-after_filter.pdf) generated with [RNAseq123](https://www.bioconductor.org/help/workflows/RNAseq123/)
+See plot from [Dr. Lisa Komoroske's file](_static/Before-after_filter.pdf) generated with [RNAseq123](https://www.bioconductor.org/help/workflows/RNAseq123/)
 ```
 filtered_norm_counts<-counts_table[!rowSums(counts_table==0)>=1, ]
 filtered_norm_counts<-as.data.frame(filtered_norm_counts)
