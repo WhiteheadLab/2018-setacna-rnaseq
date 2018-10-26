@@ -9,7 +9,9 @@ Learning objectives:
 
 ## Make a new working directory and link the trimmed reads and assembly
 
-We will be using the same data as before ([Schurch et al, 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4878611/)), so the following commands will create a new folder `rnaseq` and link the data in:
+We will be using the same data as before ([Tulin et al., 2013](https://evodevojournal.biomedcentral.com/articles/10.1186/2041-9139-4-16)). 
+
+The following commands will create a new folder `rnaseq` and link the data in:
 
 ```
 cd ..
