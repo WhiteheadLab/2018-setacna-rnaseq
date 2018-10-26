@@ -18,8 +18,8 @@ References:
 RStudio only recognizes files in home `~/`. So, soft link files there:
 
 ```
-cd
-mkdir ~/DE
+cd ..
+mkdir DE
 cd DE
 mkdir quant
 cd quant
