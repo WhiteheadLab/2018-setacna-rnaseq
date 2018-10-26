@@ -16,6 +16,8 @@ Trinity, one of the leading *de novo* transcriptome assemblers, was developed at
 
 ## Change to a new working directory and link the original data
 
+We will be using the same set of *Nematostella vectensis* mRNAseq reads that we trimmed in the last lesson from [Tulin et al., 2013](https://evodevojournal.biomedcentral.com/articles/10.1186/2041-9139-4-16).
+
 The following commands will create a new folder `assembly` and link the trimmed data we prepared earlier in the newly created folder:
 
 ```
