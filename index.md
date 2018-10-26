@@ -9,7 +9,7 @@ We are very excited to have you here and hope that we can get through a lot of m
 * [Jane Park](https://twitter.com/janepark721?lang=en)
 * [Elias Oziolor](https://oziolor.wordpress.com/)
 
-This workshop incorporates materials from the [Analysis of Next Generation Sequencing or ANGUS](https://angus.readthedocs.io/en/2018/), which we recommend you visit and explore!
+This workshop incorporates materials from the [Analysis of Next Generation Sequencing or ANGUS](https://angus.readthedocs.io/en/2018/). We recommend you visit and explore these materials! The ANGUS materials are taught at the [DIBSI (Data Intensive Biology Summer Institute)](http://ivory.idyll.org/dibsi/) coordinated at UC Davis every summer by [Dr. Titus Brown](http://ivory.idyll.org/lab), which Lisa, Jane and Elias assist with in their capacity as certified [Carpentry Instructors](https://software-carpentry.org/blog/2017/09/merger.html).
 
 ## Schedule in brief
 
