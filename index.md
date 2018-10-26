@@ -9,12 +9,12 @@ We are very excited to have you here and hope that we can get through a lot of m
 * Jane Park
 * Elias Oziolor
 
-	+ this workshop incorporates materials from the [Analysis of Next Generation Sequencing or ANGUS](https://angus.readthedocs.io/en/2018/), which we recommend you visit and explore!
+This workshop incorporates materials from the [Analysis of Next Generation Sequencing or ANGUS](https://angus.readthedocs.io/en/2018/), which we recommend you visit and explore!
 
 ## Schedule in brief
 
 * 8:00-9:00am [Introduction and experimental design](https://setac-omics.readthedocs.io/en/latest/intro.html)
-* 9:00-10:00am [Jetstream](https://setac-omics.readthedocs.io/en/latest/jetstream/boot.html)
+* 9:00-10:00am [Jetstream](https://setac-omics.readthedocs.io/en/latest/jetstream/boot.html) and [working with bioconda](https://setac-omics.readthedocs.io/en/latest/jetstream-bioconda-config.html)
 * 10:00-10:15am Coffee and sugar
 * 10:15-11:00am [Bash](https://setac-omics.readthedocs.io/en/latest/bash_lesson.html)
 * 11:00am-12:00pm [Trimming sequencing data](https://setac-omics.readthedocs.io/en/latest/quality-trimming.html)
