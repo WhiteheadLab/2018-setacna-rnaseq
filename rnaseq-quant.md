@@ -21,7 +21,7 @@ cd rnaseq
 ln -s ../trim/0Hour*.qc.fq.gz .
 ln -s ../trim/6Hour*.qc.fq.gz .
 
-ln -s ../assembly/nema_trinity/Trinity.fasta .
+ln -s ../assembly/nema-transcriptome-assembly.fa .
 ```
 
 ## Index the assembly:
