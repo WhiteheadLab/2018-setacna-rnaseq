@@ -9,7 +9,7 @@ Learning objectives:
 
 ## Make a new working directory and link the trimmed reads and assembly
 
-We will be using the same data as before ([Tulin et al., 2013](https://evodevojournal.biomedcentral.com/articles/10.1186/2041-9139-4-16)). 
+We will be using the same trimmed fastq data as before ([Tulin et al., 2013](https://evodevojournal.biomedcentral.com/articles/10.1186/2041-9139-4-16)).
 
 The following commands will create a new folder `rnaseq` and link the data in:
 
@@ -21,12 +21,14 @@ cd rnaseq
 ln -s ../trim/0Hour*.qc.fq.gz .
 ln -s ../trim/6Hour*.qc.fq.gz .
 
-ln -s ../assembly/nema-transcriptome-assembly.fa .
+ln -s /opt/rnaseq/assembly/nema_trinity/Trinity.fasta .
 ```
+
+Note that this is a previously-assembly `Trinity.fasta` file that the whole class will use. Why is this important?
 
 ## Index the assembly:
 ```
-salmon index --index nema --type quasi --transcripts nema-transcriptome-assembly.fa
+salmon index --index nema --type quasi --transcripts Trinity.fasta
 ```
 
 ## Run salmon on all the samples:
