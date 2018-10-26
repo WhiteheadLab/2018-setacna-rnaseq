@@ -195,7 +195,7 @@ write.csv(resSig,file="nema_DESeq_padj0.05.csv")
 MA plot with some gene names:
 
 ```
-plot(log2(res_ordered$baseMean), res_ordered$log2FoldChange, col=ifelse(res_ordered$padj < 0.05, "red","gray67"),main="0 hr vs. 6 hr (padj<0.05)",xlim=c(1,20),pch=20,cex=1,ylim=c(-12,12))
+plot(log2(res_ordered$baseMean), res_ordered$log2FoldChange, col=ifelse(res_ordered$padj < 0.05, "red","gray67"),main="6 hr vs. 0 hr (padj<0.05)",xlim=c(1,20),pch=20,cex=1,ylim=c(-12,12))
 genes<-resSig$GeneID
 mygenes <- resSig[,]
 baseMean_mygenes <- mygenes[,"baseMean"]
@@ -222,7 +222,7 @@ mycl <- cutree(hr, h=max(hr$height/1.5))
 clusterCols <- rainbow(length(unique(mycl)))
 myClusterSideBar <- clusterCols[mycl]
 myheatcol <- greenred(75)
-heatmap.2(d, main="nema (padj<0.05)", 
+heatmap.2(d, main="6 hr vs. 0 hr (padj<0.05)", 
           Rowv=as.dendrogram(hr),
           cexRow=0.75,cexCol=0.8,srtCol= 90,
           adjCol = c(NA,0),offsetCol=2.5, 
