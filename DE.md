@@ -27,13 +27,11 @@ ln -s ${PROJECT}/rnaseq/*.quant .
 ```
 
 
-## Download gene and transcript id relationships to your home directory
+## Copy a previously-made gene and transcript id relationship file to your home directory
 
-Generated with [dammit](http://rnaseq-workshop-2017.readthedocs.io/en/latest/dammit_annotation.html) annotation and summarized with this [script](https://gist.github.com/ljcohen/3958c91fe39c92e51cb4544d0b6b8f24).
+Generated with the [dammit](https://angus.readthedocs.io/en/2018/dammit_annotation.html) annotation pipeline written by [Camille Scott](http://www.camillescott.org/dammit/).
 ```
-cd 
-wget https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-2017/master/_static/nema_transcript_gene_id.txt
-
+cp /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv .
 ```
 
 ## Grab a special script plotPCAWithSampleNames.R
@@ -41,40 +39,14 @@ wget https://raw.githubusercontent.com/Open-Data-Science-at-SIO/RNAseq-workshop-
 from [Igor Dolgalev](https://med.nyu.edu/research/scientific-cores-shared-resources/applied-bioinformatics-laboratories/leadership)
 
 ```
+cd
 wget https://raw.githubusercontent.com/ngs-docs/2017-dibsi-rnaseq/master/plotPCAWithSampleNames.R
-cp /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv .
-```
-
-
-## Install Rstudio dependencies
-
-```
-sudo apt-get install -y libxml2 libxml2-dev libcurl4-gnutls-dev libssl-dev
-```
-
-Install DESeq2
-
-```
-curl -O -L https://github.com/ngs-docs/angus/raw/2017/_static/install-deseq2.R
-sudo Rscript --no-save install-deseq2.R
 ```
 
 
 ## Rstudio reminder
 
-Connect to RStudio by setting your password (note, password will not be visible on the screen):
-
-```
-sudo passwd $USER
-```
-
-figuring out your username:
-
-```
-echo My username is $USER
-```
-
-and finding YOUR RStudio server interface Web address:
+Connect to RStudio (see [instructions for setting up password](https://setac-omics.readthedocs.io/en/latest/jetstream-bioconda-config.html))
 
 ```
 echo http://$(hostname):8787/
