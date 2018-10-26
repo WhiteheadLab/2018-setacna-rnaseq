@@ -5,9 +5,9 @@ We are very excited to have you here and hope that we can get through a lot of m
 
 ## Instructors
 
-* Lisa Johnson
-* Jane Park
-* Elias Oziolor
+* [Lisa Johnson](https://ljcohen.github.io/)
+* [Jane Park](https://twitter.com/janepark721?lang=en)
+* [Elias Oziolor](https://oziolor.wordpress.com/)
 
 This workshop incorporates materials from the [Analysis of Next Generation Sequencing or ANGUS](https://angus.readthedocs.io/en/2018/), which we recommend you visit and explore!
 
