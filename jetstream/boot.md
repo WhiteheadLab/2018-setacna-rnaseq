@@ -16,7 +16,7 @@ system or "Image" may also vary from "Ubuntu 18.04" or "DIBSI 2018" depending on
 
 ### Resources
 
-If you are interested in applying for Jetstream allocation credits, that is great! [Here](https://github.com/ljcohen/jetstream-xsede-illo/blob/master/xsede_applications/gigaiii.md) is our proposal that we submitted for this workshop. There are several types of allocations, [education](https://portal.xsede.org/allocations/education) (which we applied for), [start-up](https://portal.xsede.org/allocations/startup) and [research](https://portal.xsede.org/allocations/research). [Here](https://github.com/ljcohen/jetstream-xsede-illo/tree/master/xsede_applications) is a collection of successful proposals for all three types. We have found the process to be very easy. Start-up allocations for ~50,000 SU come before applying for full research allocations.
+If you are interested in applying for Jetstream allocation credits, that is great! [Here](https://github.com/ljcohen/jetstream-xsede-illo/blob/master/xsede_applications/setac.md) is our proposal that we submitted for this workshop. There are several types of allocations, [education](https://portal.xsede.org/allocations/education) (which we applied for), [start-up](https://portal.xsede.org/allocations/startup) and [research](https://portal.xsede.org/allocations/research). [Here](https://github.com/ljcohen/jetstream-xsede-illo/tree/master/xsede_applications) is a collection of successful proposals for all three types. We have found the process to be very easy. Start-up allocations for ~50,000 SU come before applying for full research allocations.
 
 
 -----
