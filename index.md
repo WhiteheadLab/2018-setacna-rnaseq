@@ -23,3 +23,8 @@ This workshop incorporates materials from the [Analysis of Next Generation Seque
 * 2:45-3:00pm Coffee and sugar
 * 3:00-4:00pm [Alignment and Read quantification](https://setac-omics.readthedocs.io/en/latest/rnaseq-quant.html)
 * 4:00-5:00pm [Differential expression](https://setac-omics.readthedocs.io/en/latest/DE.html)
+
+## Other info
+
+* Here are [instructions for downloading and installing the software pre-installed on the 'RNASeq_1DayWorkshop' Jetstream image](RNASeq_1DayWorkshop_image.html)
+* [Backup files](backup.html), if something goes wrong
