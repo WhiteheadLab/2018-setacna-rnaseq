@@ -1,7 +1,7 @@
 Welcome to SETAC-NA 2018 RNAseq workshop!
 ===
 
-This website contains materials for the [mRNAseq Data Workshop: De Novo Assembly and Differential Expression Analysis](https://sacramento.setac.org/scientific-program/abstract-submission/trainingcourses/) full-day course (8:00 am-5:00pm), held on 4 November, 2018 at the [SETAC North America](https://sacramento.setac.org/), [Sacramento Convention Center in room CC-311](https://sacramento.setac.org/venue/).
+This website contains materials for the [mRNAseq Data Workshop: De Novo Assembly and Differential Expression Analysis](https://sacramento.setac.org/scientific-program/abstract-submission/trainingcourses/) full-day course (8:00 am-5:00pm), held on 4 November, 2018 at the [SETAC North America](https://sacramento.setac.org/) meeting, at the [Sacramento Convention Center in room CC-311](https://sacramento.setac.org/venue/).
 
 We are very excited to have you here and hope that we can get through a lot of material today!
 
