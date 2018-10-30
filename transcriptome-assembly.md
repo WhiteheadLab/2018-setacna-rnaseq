@@ -88,7 +88,7 @@ Now, look at the beginning:
 head nema-transcriptome-assembly.fa
 ```
     
-It's RNA! Yay!
+These are the transcripts! Yay!
 
 Let's capture also some statistics of the Trinity assembly. Trinity provides a handy tool to do exactly that:
 
