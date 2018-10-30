@@ -6,6 +6,8 @@ Table of contents
    :numbered:
 
    index.md
+   
+   code_of_conduct.md
 
    intro.md
 
