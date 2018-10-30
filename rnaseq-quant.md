@@ -1,4 +1,4 @@
-# Alignment and Read Quantification
+# Read Quantification
 
 Learning objectives:
   
