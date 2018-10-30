@@ -26,3 +26,5 @@ Table of contents
    DE.md
    
    backup.md
+   
+   RNASeq_1DayWorkshop_image.md
