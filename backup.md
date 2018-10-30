@@ -6,7 +6,9 @@ If something happens and you are unable to create the files during a particular 
 /opt/rnaseq/
 ```
 
-### Input raw fastq data, download from [OSF repository](https://osf.io/72bu3/):
+### Input raw fastq data
+
+Download from [OSF repository](https://osf.io/72bu3/):
 
 ```
 curl -L https://osf.io/365fg/download -o nema_subset_0Hour.zip
