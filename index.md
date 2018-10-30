@@ -26,5 +26,5 @@ This workshop incorporates materials from the [Analysis of Next Generation Seque
 
 ## Other info
 
-* Here are [instructions for downloading and installing the software pre-installed on the 'RNASeq_1DayWorkshop' Jetstream image](RNASeq_1DayWorkshop_image.html)
+* [Instructions for downloading and installing the software pre-installed on the 'RNASeq_1DayWorkshop' Jetstream image](RNASeq_1DayWorkshop_image.html), if you would like to install on your own systems
 * [Backup files](backup.html), if something goes wrong
