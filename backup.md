@@ -27,7 +27,7 @@ unzip nema_subset_6Hour.zip
 /opt/rnaseq/assembly/nema_trinity/Trinity.fasta
 ```
 
-### Annotation, created with 
+### Annotation, created with [this annotation lesson](https://angus.readthedocs.io/en/2018/dammit_annotation.html)
 
 ```
 /opt/rnaseq/annotation/Trinity.fasta.dammit/nema_gene_name_id.csv
