@@ -14,7 +14,7 @@ The answer is *de novo* assembly. The basic idea with *de novo* transcriptome as
 
 Trinity, one of the leading *de novo* transcriptome assemblers, was developed at the [Broad Institute](http://www.broadinstitute.org/) and the [Hebrew University of Jerusalem](http://www.cs.huji.ac.il/). We will be losely following steps from the [Eel pond protocol](https://eel-pond.readthedocs.io/en/latest) for our guide to doing RNA-seq assembly.
 
-## Change to a new working directory and link the original data
+## Link in the trimmed data
 
 We will be using the same set of *Nematostella vectensis* mRNAseq reads that we trimmed in the last lesson from [Tulin et al., 2013](https://evodevojournal.biomedcentral.com/articles/10.1186/2041-9139-4-16).
 
@@ -35,7 +35,7 @@ cat *R1*.qc.fq.gz orphans.qc.fq.gz > left.fq.gz
 cat *R2*.qc.fq.gz > right.fq.gz
 ```
 
-### Run the assembler
+## Run the assembler
 
 Trinity works both with paired-end reads as well as single-end reads (including simultaneously both types at the same time). In the general case, the paired-end files are defined as `--left left.fq` and `--right right.fq` respectively. The single-end reads (a.k.a _orphans_) are defined by the flag `--single`. 
 
@@ -74,7 +74,7 @@ at the end.
 
 
 
-### Looking at the assembly
+## Looking at the assembly
 
 First, save the assembly:
 
@@ -138,6 +138,8 @@ Stats based on ALL transcript contigs:
 
 This is a set of summary stats about your assembly. Are they good? Bad? How would you know?
 
-Suggestions for next steps after generating a *de novo* transcriptome assembly:
+## Suggestions for next steps 
+
+After generating a *de novo* transcriptome assembly:
 * [annotation](https://angus.readthedocs.io/en/2018/dammit_annotation.html)
 * [evaluation](https://dibsi-rnaseq.readthedocs.io/en/latest/evaluation.html)
