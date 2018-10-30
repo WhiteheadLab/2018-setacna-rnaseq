@@ -1,14 +1,5 @@
 # Short read quality and trimming
 
-Let's get out of the environments we created:
-
-* Enter this twice to get out of both __base__ and __pony__
-
-```
-source deactivate
-```
----
-
 You should now be logged into your Jetstream computer!  You should see
 something like this
 
