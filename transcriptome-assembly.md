@@ -1,4 +1,4 @@
-# Transcriptome assembly - some basics
+# De novo transcriptome assembly
 
 Learning objectives:
 
