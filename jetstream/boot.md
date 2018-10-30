@@ -1,20 +1,23 @@
 # Booting a Jetstream Computer Instance for your use!
 
-What we're going to do here is walk through starting up a running
-computer (an "instance") on the Jetstream service. 
+What we're going to do here is walk through starting up a computer (an "instance") on the Jetstream service. 
 * Jetstream is run by NSF and provides elastic cloud computing services. 
 * "Cloud" computing is a fancy word for being allowed to temporarily use someone else's computer somewhere else with full administrative privaleges to install whatever software we want. 
 * Sometimes we need to use computing resources that are larger than our personal computers. Cloud computing lets us decide how much capacity we want to be using. 
 
 If you would like to read more about cloud computing, see this [Carpentry Cloud Computing lesson](http://www.datacarpentry.org/cloud-genomics/01-why-cloud-computing/).
 
-Below, we've provided screenshots of the whole process. You can click
-on them to zoom in a bit.  The important areas to fill in are circled
+Below, we've provided screenshots of the whole process. The important areas to fill in are circled
 in red or pointed out with arrows.
 
 Some of the details may vary -- for example, if you have your own XSEDE
 account, you may want to log in with that -- and the name of the operating
 system or "Image" may also vary from "Ubuntu 18.04" or "DIBSI 2018" depending on the workshop.
+
+### Resources
+
+If you are interested in applying for Jetstream allocation credits, that is great! [Here](https://github.com/ljcohen/jetstream-xsede-illo/blob/master/xsede_applications/gigaiii.md) is our proposal that we submitted for this workshop. There are several types of allocations, [education](https://portal.xsede.org/allocations/education) (which we applied for), [start-up](https://portal.xsede.org/allocations/startup) and [research](https://portal.xsede.org/allocations/research). [Here](https://github.com/ljcohen/jetstream-xsede-illo/tree/master/xsede_applications) is a collection of successful proposals for all three types. We have found the process to be very easy. Start-up allocations for ~50,000 SU come before applying for full research allocations.
+
 
 -----
 
@@ -42,7 +45,7 @@ Fill in the username and then the password (which we will tell you in class).
 ## Select Projects and "Create New Project"
 
 Now, this is something you only need to once if you have your own
-account - but if you're using a shared account like tx160085, you will
+account - but if you're using a shared account like 'dibbears', you will
 need a way to keep your computers separate from everyone else's.
 
 We'll do this with Projects, which give you a bit of a workspace in which
@@ -54,7 +57,7 @@ Click on "Projects" up along the top.
            
 ## Name the project for yourself, click "create"
 
-Enter your name into the Project Name, and something simple like "ANGUS"
+Enter your name into the Project Name, and something simple like "SETAC"
 into the description. Then click 'create'.
 
 ![foo](images/login-6.thumb.png)
