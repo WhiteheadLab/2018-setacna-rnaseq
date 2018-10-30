@@ -1,9 +1,11 @@
 Welcome to SETAC-NA 2018 RNAseq workshop!
 ===
 
-This website is for the [mRNAseq Data Workshop: De Novo Assembly and Differential Expression Analysis](https://sacramento.setac.org/scientific-program/abstract-submission/trainingcourses/) full-day course (8:00 am-5:00pm), held on 4 November, 2018 at the [SETAC North America](https://sacramento.setac.org/), [Sacramento Convention Center in room CC-311](https://sacramento.setac.org/venue/).
+This website contains materials for the [mRNAseq Data Workshop: De Novo Assembly and Differential Expression Analysis](https://sacramento.setac.org/scientific-program/abstract-submission/trainingcourses/) full-day course (8:00 am-5:00pm), held on 4 November, 2018 at the [SETAC North America](https://sacramento.setac.org/), [Sacramento Convention Center in room CC-311](https://sacramento.setac.org/venue/).
 
 We are very excited to have you here and hope that we can get through a lot of material today!
+
+This workshop runs under a [Code of Conduct](code-of-conduct.html). Please respect it and be excellent to each other!
 
 ## Instructors
 
@@ -30,3 +32,4 @@ This workshop incorporates materials from the [Analysis of Next Generation Seque
 
 * [Instructions for downloading and installing the software pre-installed on the 'RNASeq_1DayWorkshop' Jetstream image](RNASeq_1DayWorkshop_image.html), if you would like to install on your own systems
 * [Backup files](backup.html), if something goes wrong
+* If you find that you would like more practice working on the command line, here is a [command-line bootcamp](http://rik.smith-unna.com/command_line_bootcamp/?id=yk822u2rpo). In addition, BASH training videos are freely available through the [NH-INBRE program, the UNH Bioinformatics Core facility](http://nhinbre.org/bioinformatics-modules/).
