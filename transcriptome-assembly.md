@@ -2,11 +2,10 @@
 
 Learning objectives:
 
-* Learn what is Transcriptome assembly?
-
+* What is transcriptome assembly?
 * How do assemblers work?
 * Checking the quality of assembly
-* Understanding Transcriptome assembly
+* Understanding transcriptome assembly
 
 What if you are working with a species with no existing reference genome or transcriptome. How do you construct one?
 
