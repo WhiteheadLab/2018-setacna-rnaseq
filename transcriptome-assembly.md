@@ -137,3 +137,7 @@ Stats based on ALL transcript contigs:
 ```
 
 This is a set of summary stats about your assembly. Are they good? Bad? How would you know?
+
+Suggestions for next steps after generating a *de novo* transcriptome assembly:
+* [annotation](https://angus.readthedocs.io/en/2018/dammit_annotation.html)
+* [evaluation](https://dibsi-rnaseq.readthedocs.io/en/latest/evaluation.html)
