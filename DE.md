@@ -140,7 +140,7 @@ counts_table = counts( dds, normalized=TRUE )
 
 Filtering out low expression transcripts:
 
-See plot from [Dr. Lisa Komoroske's file](_static/Before-after_filter.pdf) generated with [RNAseq123](https://www.bioconductor.org/help/workflows/RNAseq123/)
+See plot from [Dr. Lisa Komoroske's file](https://rnaseq-workshop-2017.readthedocs.io/en/latest/_static/Before-after_filter.pdf) generated with [RNAseq123](https://www.bioconductor.org/help/workflows/RNAseq123/)
 ```
 filtered_norm_counts<-counts_table[!rowSums(counts_table==0)>=1, ]
 filtered_norm_counts<-as.data.frame(filtered_norm_counts)
