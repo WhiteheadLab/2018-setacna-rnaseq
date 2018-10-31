@@ -29,7 +29,7 @@ This workshop incorporates materials from the [Analysis of Next Generation Seque
 * 12:00-1:30pm Lunch
 * 1:30-2:45pm [Transcriptome assembly](https://setac-omics.readthedocs.io/en/latest/transcriptome-assembly.html)
 * 2:45-3:00pm Coffee and sugar
-* 3:00-4:00pm [Alignment and Read quantification](https://setac-omics.readthedocs.io/en/latest/rnaseq-quant.html)
+* 3:00-4:00pm [Read quantification](https://setac-omics.readthedocs.io/en/latest/rnaseq-quant.html)
 * 4:00-5:00pm [Differential expression](https://setac-omics.readthedocs.io/en/latest/DE.html)
 
 ## Other info
