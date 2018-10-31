@@ -19,7 +19,7 @@ This workshop incorporates materials from the [Analysis of Next Generation Seque
 
 ## Schedule in brief
 
-* 8:00-9:00am [Introduction and experimental design](https://setac-omics.readthedocs.io/en/latest/intro.html)
+* 8:00-9:00am [Introduction](https://setac-omics.readthedocs.io/en/latest/intro.html) and RNASeq overview
 * 9:00-10:00am [Jetstream lesson](https://setac-omics.readthedocs.io/en/latest/jetstream/boot.html)
   * [logging in with a private key](https://setac-omics.readthedocs.io/en/latest/jetstream/login.html)
   * [working with bioconda](https://setac-omics.readthedocs.io/en/latest/jetstream-bioconda-config.html)
