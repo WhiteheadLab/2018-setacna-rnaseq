@@ -9,7 +9,7 @@ References:
 * [Love et al. 2014](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8)
 * [Love et al. 2016](https://www.nature.com/nbt/journal/v34/n12/full/nbt.3682.html)
 
-[DE lecture by Jane Khudyakov, July 2017](_static/Jane_differential_expression.pdf)
+[DE lecture by Jane Khudyakov, July 2017](https://rnaseq-workshop-2017.readthedocs.io/en/latest/_static/Jane_differential_expression.pdf)
 
 ## RUN THIS DURING LUNCH BREAK
 
