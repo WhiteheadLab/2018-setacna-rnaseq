@@ -1,6 +1,6 @@
 # Instructions for creating a Jetstream image
 
-We've installed software on the image, [RNASeq_1DayWorkshop](https://use.jetstream-cloud.org/application/images/786) so you don't have to waste time with installation during the workshop. If you would like to install this same set of software on your own hpcc or on another machine, some of these steps may work. We have tested and know the software works on an Ubuntu 18.04 base installation machine. We cannot guarantee that these lessons will work on other operating systems. (Based on [Instructions from DIGSI](https://angus.readthedocs.io/en/2018/jetstream-bioconda-config.html))
+We've installed software on the image, [RNASeq_1DayWorkshop](https://use.jetstream-cloud.org/application/images/786) so you don't have to waste time with installation during the workshop. If you would like to install this same set of software on your own hpcc or on another machine, some of these steps may work. We have tested and know the software works on an Ubuntu 18.04 base installation machine. We cannot guarantee that these lessons will work on other operating systems. (Based on [Instructions from DIBSI](https://angus.readthedocs.io/en/2018/jetstream-bioconda-config.html))
 
 Launch instance: “Ubuntu 18.04 Devel and Docker” base image (Oct 1, 2018 by jfischer), m1.large (CPU: 10, Mem: 30 GB, Disk: 60 GB)
 
