@@ -1,7 +1,7 @@
 # Booting a Jetstream Computer Instance for your use!
 
 What we're going to do here is walk through starting up a computer (an "instance") on the Jetstream service. 
-* Jetstream is run by NSF and provides elastic cloud computing services. 
+* Jetstream is run by [XSEDE, an NSF-funded program](https://www.xsede.org/about/what-we-do), and provides elastic cloud computing services. 
 * "Cloud" computing is a fancy word for being allowed to temporarily use someone else's computer somewhere else with full administrative privaleges to install whatever software we want. 
 * Sometimes we need to use computing resources that are larger than our personal computers. Cloud computing lets us decide how much capacity we want to be using. 
 
@@ -10,14 +10,11 @@ If you would like to read more about cloud computing, see this [Carpentry Cloud 
 Below, we've provided screenshots of the whole process. The important areas to fill in are circled
 in red or pointed out with arrows.
 
-Some of the details may vary -- for example, if you have your own XSEDE
-account, you may want to log in with that -- and the name of the operating
-system or "Image" may also vary from "Ubuntu 18.04" or "DIBSI 2018" depending on the workshop.
+Some of the details may vary -- for example, if you have your own XSEDE account, you may want to log in with that in the future -- and the name of the operating system or "Image" may also vary from "Ubuntu 18.04" or "DIBSI 2018" depending on the workshop.
 
 ### Resources
 
-If you are interested in applying for Jetstream allocation credits, that is great! [Here](https://github.com/ljcohen/jetstream-xsede-illo/blob/master/xsede_applications/setac.md) is our proposal that we submitted for this workshop. There are several types of allocations, [education](https://portal.xsede.org/allocations/education) (which we applied for), [start-up](https://portal.xsede.org/allocations/startup) and [research](https://portal.xsede.org/allocations/research). [Here](https://github.com/ljcohen/jetstream-xsede-illo/tree/master/xsede_applications) is a collection of successful proposals for all three types. We have found the process to be very easy. Start-up allocations for ~50,000 SU come before applying for full research allocations.
-
+If you are interested in applying for XSEDE-Jetstream allocation credits, that is great! These are free compute resources provided by [XSEDE](https://www.xsede.org/about/what-we-do), and available to all investigators at US academic, government and non-profit institutions. [Here](https://github.com/ljcohen/jetstream-xsede-illo/blob/master/xsede_applications/setac.md) is our proposal that we submitted for this workshop. There are several types of allocations: 1) [education](https://portal.xsede.org/allocations/education) (which we applied for), 2) [start-up](https://portal.xsede.org/allocations/startup) and 3) [research](https://portal.xsede.org/allocations/research). [Here is a collection of successful proposals for all three types](https://github.com/ljcohen/jetstream-xsede-illo/tree/master/xsede_applications). [Start-up allocations requests for ~50,000 SU](https://portal.xsede.org/allocations/startup) are the first step before applying for full research allocations. We have found the process to be very easy and highly recommend [contacting the XSEDE help desk if you have any questions](https://portal.xsede.org/help-desk). They are very helpful and usually quick to respond. 
 
 -----
 
