@@ -7,7 +7,9 @@ We are very excited to have you here and hope that we can get through a lot of m
 
 This workshop runs under a [Code of Conduct](code_of_conduct.html). Please respect it and be excellent to each other!
 
-Link to class notes, [Hackmd.io](https://hackmd.io/0ezEUu0rSHySOFyPEfw1DA?both)
+Notes from the course: 
+
+[Hackmd.io](https://hackmd.io/0ezEUu0rSHySOFyPEfw1DA?both)
 
 ## Instructors
 
