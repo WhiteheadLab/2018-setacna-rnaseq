@@ -19,9 +19,7 @@ to make use of it, you'll need the private key. And so, we move on!
 
 ## Getting the Private Key
 
-The private key has been posted on slack in the `#general` channel. You can download it by 
-visiting [here](https://dibsi2018.slack.com/files/UBHJK59T9/FBHQP0KRB/angus_private_key), selecting
-**Actions**, and pressing download.
+The private key has been posted on slack in the `#general` channel.
 
 ## Getting your instance IP address
 
