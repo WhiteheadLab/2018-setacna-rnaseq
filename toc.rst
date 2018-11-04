@@ -12,12 +12,12 @@ Table of contents
    intro.md
 
    jetstream/boot.md
-
-   bash_lesson.md
-
+   
    jetstream/login.md
 
    jetstream-bioconda-config.md
+
+   bash_lesson.md
 
    quality-trimming.md
 
