@@ -18,8 +18,8 @@ cd ..
 mkdir -p rnaseq
 cd rnaseq
 
-ln -s ../trim/0Hour*.qc.fq.gz .
-ln -s ../trim/6Hour*.qc.fq.gz .
+ln -s ../quality/0Hour*.qc.fq.gz .
+ln -s ../quality/6Hour*.qc.fq.gz .
 
 ln -s /opt/rnaseq/assembly/nema_trinity/Trinity.fasta .
 ```
