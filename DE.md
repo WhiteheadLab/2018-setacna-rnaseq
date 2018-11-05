@@ -29,7 +29,7 @@ mkdir DE
 cd DE
 mkdir quant
 cd quant
-ln -s ${PROJECT}/rnaseq/*.quant .
+ln -s /home/dibbears/work/rnaseq/*.quant .
 ```
 
 
