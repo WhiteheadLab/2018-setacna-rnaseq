@@ -1,6 +1,6 @@
 # Jetstream: working with bioconda.
 
-Learning objections:
+Learning objectives:
 * learn what bioconda is
 * understand basic `conda` commands
 * learn how to list installed software packages 
